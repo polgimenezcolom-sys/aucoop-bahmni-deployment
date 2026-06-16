@@ -1,0 +1,12 @@
+*.pyc
+__pycache__/
+.env.local
+*.log
+node_modules/
+.DS_Store
+Thumbs.db
+*.bak
+*.swp
+*~
+.idea/
+.vscode/

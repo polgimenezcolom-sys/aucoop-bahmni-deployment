@@ -1,0 +1,51 @@
+code,name,form,strength,category,who_essential,unit_price_usd,reorder_level,initial_stock
+ACT-AL,Artemether/Lumefantrine,Tablet,20/120mg,Antimalarial,Yes,0.50,100,500
+QN-INJ,Quinine Injection,Ampoule,300mg/mL,Antimalarial,Yes,1.20,20,100
+ART-INJ,Artesunate Injection,Vial,60mg,Antimalarial (severe),Yes,1.80,20,80
+AMOX-CAP,Amoxicillin,Capsule,500mg,Antibiotic,Yes,0.08,200,1000
+AMOX-SYR,Amoxicillin,Suspension,250mg/5mL,Antibiotic,Yes,1.50,50,200
+METRO-TAB,Metronidazole,Tablet,400mg,Antibiotic,Yes,0.05,200,1000
+CIPRO-TAB,Ciprofloxacin,Tablet,500mg,Antibiotic,Yes,0.10,100,500
+DOXY-CAP,Doxycycline,Capsule,100mg,Antibiotic,Yes,0.06,100,500
+CEFT-INJ,Ceftriaxone,Vial,1g,Antibiotic (injectable),Yes,1.50,30,150
+GENT-INJ,Gentamicin,Ampoule,80mg/2mL,Antibiotic (injectable),Yes,0.40,30,150
+COTRI-TAB,Cotrimoxazole,Tablet,480mg,Antibiotic,Yes,0.03,200,1000
+COTRI-SYR,Cotrimoxazole,Suspension,240mg/5mL,Antibiotic,Yes,1.00,50,200
+ERY-TAB,Erythromycin,Tablet,500mg,Antibiotic,Yes,0.10,100,500
+TDF-3TC-DTG,Tenofovir/Lamivudine/Dolutegravir,Tablet,300/300/50mg,Antiretroviral,Yes,3.50,60,300
+RHZE,Rifampicin/Isoniazid/Pyrazinamide/Ethambutol,Tablet,150/75/400/275mg,Anti-TB,Yes,0.25,60,300
+PARA-TAB,Paracetamol,Tablet,500mg,Analgesic,Yes,0.02,500,2000
+PARA-SYR,Paracetamol,Syrup,120mg/5mL,Analgesic,Yes,0.80,50,200
+IBU-TAB,Ibuprofen,Tablet,400mg,Analgesic/Anti-inflammatory,Yes,0.03,200,1000
+MORPH-INJ,Morphine Injection,Ampoule,10mg/mL,Opioid analgesic,Yes,2.00,10,50
+TRAM-CAP,Tramadol,Capsule,50mg,Analgesic,Yes,0.08,100,500
+AMLO-TAB,Amlodipine,Tablet,5mg,Antihypertensive,Yes,0.04,100,500
+LISIN-TAB,Lisinopril,Tablet,10mg,Antihypertensive,Yes,0.05,100,500
+HCTZ-TAB,Hydrochlorothiazide,Tablet,25mg,Antihypertensive/Diuretic,Yes,0.03,100,500
+METF-TAB,Metformin,Tablet,500mg,Antidiabetic,Yes,0.04,200,1000
+INS-REG,Insulin Regular,Vial,100IU/mL 10mL,Antidiabetic,Yes,5.00,10,50
+INS-NPH,Insulin NPH,Vial,100IU/mL 10mL,Antidiabetic,Yes,5.00,10,50
+NS-1L,Normal Saline 0.9%,Bag,1000mL,IV Fluid,Yes,1.20,50,200
+RL-1L,Ringer's Lactate,Bag,1000mL,IV Fluid,Yes,1.30,50,200
+D5W-500,Dextrose 5% in Water,Bag,500mL,IV Fluid,Yes,1.00,30,150
+ORS-SAC,ORS (Oral Rehydration Salts),Sachet,1L preparation,Rehydration,Yes,0.20,200,1000
+ZINC-TAB,Zinc Sulfate,Dispersible tablet,20mg,Micronutrient,Yes,0.03,100,500
+FOLIC-TAB,Folic Acid,Tablet,5mg,Vitamin,Yes,0.02,200,1000
+IRON-TAB,Ferrous Sulfate,Tablet,200mg,Haematinic,Yes,0.02,200,1000
+VITA-CAP,Vitamin A,Capsule,200000IU,Vitamin,Yes,0.10,100,500
+OXY-INJ,Oxytocin,Ampoule,10IU/mL,Obstetric,Yes,0.50,20,100
+MISO-TAB,Misoprostol,Tablet,200mcg,Obstetric,Yes,0.30,20,100
+MGSO4-INJ,Magnesium Sulfate,Ampoule,500mg/mL 10mL,Anticonvulsant,Yes,0.80,10,50
+DIAZ-INJ,Diazepam,Ampoule,5mg/mL 2mL,Anticonvulsant/Sedative,Yes,0.30,20,100
+PHEN-TAB,Phenytoin,Tablet,100mg,Anticonvulsant,Yes,0.05,50,200
+SALB-INH,Salbutamol,Inhaler,100mcg/dose,Bronchodilator,Yes,2.50,20,100
+PRED-TAB,Prednisolone,Tablet,5mg,Corticosteroid,Yes,0.04,100,500
+DEXA-INJ,Dexamethasone,Ampoule,4mg/mL,Corticosteroid,Yes,0.50,20,100
+OMEP-CAP,Omeprazole,Capsule,20mg,Antacid/PPI,Yes,0.05,100,500
+FLUC-CAP,Fluconazole,Capsule,150mg,Antifungal,Yes,0.15,50,200
+TETRA-EYE,Tetracycline Eye Ointment,Tube,1% 5g,Ophthalmic,Yes,0.30,20,100
+PVP-I,Povidone-Iodine Solution,Bottle,10% 500mL,Antiseptic,Yes,2.00,10,50
+CHLOR-SOL,Chlorhexidine Solution,Bottle,5% 1L,Antiseptic,Yes,3.00,10,50
+LIDO-INJ,Lidocaine,Vial,1% 20mL,Local anaesthetic,Yes,0.50,20,100
+ATRO-INJ,Atropine,Ampoule,1mg/mL,Emergency,Yes,0.40,10,50
+ADREN-INJ,Adrenaline (Epinephrine),Ampoule,1mg/mL,Emergency,Yes,0.50,10,50

@@ -1,0 +1,21 @@
+test_code,test_name,sample_type,normal_range_male,normal_range_female,unit,turnaround_time,department
+MAL-RDT,Malaria Rapid Diagnostic Test,Blood (capillary),Negative,Negative,Pos/Neg,15 min,Lab
+CBC-HB,Hemoglobin (CBC),Blood (venous),13.0-17.0,12.0-15.5,g/dL,2 hours,Lab
+CBC-WBC,White Blood Cell Count (CBC),Blood (venous),4.5-11.0,4.5-11.0,x10^9/L,2 hours,Lab
+CBC-PLT,Platelet Count (CBC),Blood (venous),150-400,150-400,x10^9/L,2 hours,Lab
+GLU,Blood Glucose (Random),Blood (capillary),70-140,70-140,mg/dL,10 min,Lab
+UA,Urinalysis (Dipstick),Urine (midstream),Normal,Normal,Multiple,30 min,Lab
+HIV-RT,HIV Rapid Test,Blood (capillary),Non-reactive,Non-reactive,Reactive/Non-reactive,20 min,Lab
+HBV,Hepatitis B Surface Antigen,Blood (venous),Negative,Negative,Pos/Neg,30 min,Lab
+BT-ABO,Blood Type (ABO + Rh),Blood (venous),—,—,ABO/Rh,1 hour,Lab
+UC,Urine Culture & Sensitivity,Urine (midstream),No growth,No growth,CFU/mL,48 hours,Lab
+AFB,Sputum AFB (Acid-Fast Bacilli),Sputum,Negative,Negative,Pos/Neg,24 hours,Lab
+PREG,Pregnancy Test (urine hCG),Urine,N/A,Negative,Pos/Neg,10 min,Lab
+NA,Sodium (Electrolytes),Blood (venous),136-145,136-145,mmol/L,4 hours,Lab
+K,Potassium (Electrolytes),Blood (venous),3.5-5.0,3.5-5.0,mmol/L,4 hours,Lab
+ALT,Alanine Aminotransferase (Liver),Blood (venous),7-56,7-45,U/L,4 hours,Lab
+AST,Aspartate Aminotransferase (Liver),Blood (venous),10-40,9-32,U/L,4 hours,Lab
+CREAT,Creatinine (Renal),Blood (venous),0.74-1.35,0.59-1.04,mg/dL,4 hours,Lab
+ESR,Erythrocyte Sedimentation Rate,Blood (venous),0-15,0-20,mm/hr,1 hour,Lab
+WIDAL,Widal Test (Typhoid),Blood (venous),<1:80,<1:80,Titer,2 hours,Lab
+STOOL,Stool Ova & Parasites,Stool,No parasites seen,No parasites seen,Microscopy,2 hours,Lab
