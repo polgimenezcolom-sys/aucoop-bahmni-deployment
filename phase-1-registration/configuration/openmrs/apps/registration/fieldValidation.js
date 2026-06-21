@@ -233,16 +233,6 @@ Bahmni.Registration.customValidator = {
                 "button.confirm:hover, .button.confirm:hover, button.save-btn:hover { " +
                 "  background-color: #1b5e20 !important; " +
                 "} " +
-                ".opd-header-bottom button, .opd-header-bottom a.back-btn { " +
-                "  background: #f1f5f9 !important; " +
-                "  border: 1px solid #cbd5e1 !important; " +
-                "  border-radius: 6px !important; " +
-                "  color: #0b3583 !important; " +
-                "} " +
-                ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover { " +
-                "  background: #e2e8f0 !important; " +
-                "  color: #0b3583 !important; " +
-                "} " +
 
                 /* 6. Clean Table Styling */
                 "table { " +
@@ -319,4 +309,57 @@ Bahmni.Registration.customValidator = {
     }
 
     setInterval(runPoller, 1000);
+
+    // Redirect to dashboard on "Start xxx Visit" click
+    document.addEventListener('click', function(e) {
+        var target = e.target;
+        while (target && target !== document.body) {
+            if (target.tagName === 'BUTTON' || target.tagName === 'A') {
+                var text = target.textContent || '';
+                if (text.trim().match(/^Start .* Visit$/i)) {
+                    window._sjdStartingVisit = true;
+                    // Auto-reset flag after 5 seconds in case the request fails
+                    setTimeout(function() {
+                        window._sjdStartingVisit = false;
+                    }, 5000);
+                }
+                break;
+            }
+            target = target.parentNode;
+        }
+    }, true);
+
+    (function() {
+        var open = XMLHttpRequest.prototype.open;
+        var send = XMLHttpRequest.prototype.send;
+        
+        XMLHttpRequest.prototype.open = function(method, url) {
+            this._method = method;
+            this._url = url;
+            return open.apply(this, arguments);
+        };
+        
+        XMLHttpRequest.prototype.send = function() {
+            var self = this;
+            var onreadystatechange = this.onreadystatechange;
+            this.onreadystatechange = function() {
+                if (self.readyState === 4) {
+                    if (self.status >= 200 && self.status < 300) {
+                        if (window._sjdStartingVisit && self._method === 'POST' && 
+                            (self._url.indexOf('/ws/rest/v1/visit') !== -1 || self._url.indexOf('/ws/rest/v1/bahmnicore/visit') !== -1)) {
+                            
+                            window._sjdStartingVisit = false;
+                            setTimeout(function() {
+                                window.location.href = "/bahmni/home/index.html#/dashboard";
+                            }, 500);
+                        }
+                    }
+                }
+                if (onreadystatechange) {
+                    return onreadystatechange.apply(this, arguments);
+                }
+            };
+            return send.apply(this, arguments);
+        };
+    })();
 })();

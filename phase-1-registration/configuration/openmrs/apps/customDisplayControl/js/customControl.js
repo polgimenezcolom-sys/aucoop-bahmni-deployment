@@ -120,16 +120,7 @@
         "button.confirm:hover, .button.confirm:hover, button.save-btn:hover { " +
         "  background-color: #1b5e20 !important; " +
         "} " +
-        ".opd-header-bottom button, .opd-header-bottom a.back-btn { " +
-        "  background: #f1f5f9 !important; " +
-        "  border: 1px solid #cbd5e1 !important; " +
-        "  border-radius: 6px !important; " +
-        "  color: #0b3583 !important; " +
-        "} " +
-        ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover { " +
-        "  background: #e2e8f0 !important; " +
-        "  color: #0b3583 !important; " +
-        "} " +
+
 
         /* 6. Clean Table Styling */
         "table { " +
