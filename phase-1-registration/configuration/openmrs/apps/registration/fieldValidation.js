@@ -219,6 +219,11 @@ Bahmni.Registration.customValidator = {
                 "#sjd-show-all-btn:hover { " +
                 "  background-color: #07245c !important; " +
                 "} " +
+                "#sjd-header-brand img { " +
+                "  filter: brightness(0) invert(1) !important; " +
+                "  display: inline-block !important; " +
+                "  vertical-align: middle !important; " +
+                "} " +
 
                 /* 3. Dashboard Layout Cards */
                 ".dashboard-section, .patient-dashboard .section-container, .section, .visit-page .section-container { " +
