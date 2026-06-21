@@ -310,25 +310,7 @@ Bahmni.Registration.customValidator = {
 
     setInterval(runPoller, 1000);
 
-    // Redirect to dashboard on "Start xxx Visit" click
-    document.addEventListener('click', function(e) {
-        var target = e.target;
-        while (target && target !== document.body) {
-            if (target.tagName === 'BUTTON' || target.tagName === 'A') {
-                var text = target.textContent || '';
-                if (text.trim().match(/^Start .* Visit$/i)) {
-                    window._sjdStartingVisit = true;
-                    // Auto-reset flag after 5 seconds in case the request fails
-                    setTimeout(function() {
-                        window._sjdStartingVisit = false;
-                    }, 5000);
-                }
-                break;
-            }
-            target = target.parentNode;
-        }
-    }, true);
-
+    // Redirect to dashboard on successful visit start POST request (when "Save" is clicked in start visit modal)
     (function() {
         var open = XMLHttpRequest.prototype.open;
         var send = XMLHttpRequest.prototype.send;
@@ -345,10 +327,18 @@ Bahmni.Registration.customValidator = {
             this.onreadystatechange = function() {
                 if (self.readyState === 4) {
                     if (self.status >= 200 && self.status < 300) {
-                        if (window._sjdStartingVisit && self._method === 'POST' && 
-                            (self._url.indexOf('/ws/rest/v1/visit') !== -1 || self._url.indexOf('/ws/rest/v1/bahmnicore/visit') !== -1)) {
-                            
-                            window._sjdStartingVisit = false;
+                        var isVisitCreate = false;
+                        if (self._method === 'POST') {
+                            if (self._url.indexOf('/ws/rest/v1/bahmnicore/visit') !== -1) {
+                                isVisitCreate = true;
+                            } else if (self._url.indexOf('/ws/rest/v1/visit') !== -1) {
+                                var path = self._url.split('?')[0];
+                                if (/\/visit\/?$/.test(path)) {
+                                    isVisitCreate = true;
+                                }
+                            }
+                        }
+                        if (isVisitCreate) {
                             setTimeout(function() {
                                 window.location.href = "/bahmni/home/index.html#/dashboard";
                             }, 500);
