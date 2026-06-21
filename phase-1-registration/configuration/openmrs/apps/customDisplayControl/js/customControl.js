@@ -229,3 +229,42 @@
     setInterval(injectSJDHeaderBranding, 1000);
     injectSJDHeaderBranding();
 })();
+
+// 6. CLINICAL OBSERVATION SAVE REDIRECT
+(function() {
+    var open = XMLHttpRequest.prototype.open;
+    var send = XMLHttpRequest.prototype.send;
+    
+    XMLHttpRequest.prototype.open = function(method, url) {
+        this._method = method;
+        this._url = url;
+        return open.apply(this, arguments);
+    };
+    
+    XMLHttpRequest.prototype.send = function() {
+        var self = this;
+        var onreadystatechange = this.onreadystatechange;
+        this.onreadystatechange = function() {
+            if (self.readyState === 4) {
+                if (self.status >= 200 && self.status < 300) {
+                    var match = window.location.hash.match(/\/patient\/([a-f0-9\-]{36})\/dashboard\/concept-set-group\/observations/i);
+                    if (match && self._method === 'POST') {
+                        var isSaveObs = (self._url.indexOf('/ws/rest/v1/bahmnicore/encounter') !== -1 || 
+                                         self._url.indexOf('/ws/rest/v1/encounter') !== -1 || 
+                                         self._url.indexOf('/ws/rest/v1/obs') !== -1);
+                        if (isSaveObs) {
+                            var patientUuid = match[1];
+                            setTimeout(function() {
+                                window.location.hash = "/default/patient/" + patientUuid + "/dashboard?currentTab=DASHBOARD_TAB_GENERAL_KEY";
+                            }, 500);
+                        }
+                    }
+                }
+            }
+            if (onreadystatechange) {
+                return onreadystatechange.apply(this, arguments);
+            }
+        };
+        return send.apply(this, arguments);
+    };
+})();
