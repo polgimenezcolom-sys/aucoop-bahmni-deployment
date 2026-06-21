@@ -310,7 +310,7 @@ Bahmni.Registration.customValidator = {
 
     setInterval(runPoller, 1000);
 
-    // Redirect to dashboard on successful visit start POST request (when "Save" is clicked in start visit modal)
+    // Redirect to dashboard on successful visit details save POST request (when "Save" is clicked in visit details page)
     (function() {
         var open = XMLHttpRequest.prototype.open;
         var send = XMLHttpRequest.prototype.send;
@@ -327,18 +327,18 @@ Bahmni.Registration.customValidator = {
             this.onreadystatechange = function() {
                 if (self.readyState === 4) {
                     if (self.status >= 200 && self.status < 300) {
-                        var isVisitCreate = false;
+                        var isVisitDetailsSave = false;
                         if (self._method === 'POST') {
-                            if (self._url.indexOf('/ws/rest/v1/bahmnicore/visit') !== -1) {
-                                isVisitCreate = true;
-                            } else if (self._url.indexOf('/ws/rest/v1/visit') !== -1) {
-                                var path = self._url.split('?')[0];
-                                if (/\/visit\/?$/.test(path)) {
-                                    isVisitCreate = true;
+                            var isEncounterOrObs = (self._url.indexOf('/ws/rest/v1/bahmnicore/encounter') !== -1 || 
+                                                   self._url.indexOf('/ws/rest/v1/encounter') !== -1 || 
+                                                   self._url.indexOf('/ws/rest/v1/obs') !== -1);
+                            if (isEncounterOrObs) {
+                                if (window.location.hash.match(/\/patient\/[a-f0-9\-]{36}\/visit/i)) {
+                                    isVisitDetailsSave = true;
                                 }
                             }
                         }
-                        if (isVisitCreate) {
+                        if (isVisitDetailsSave) {
                             setTimeout(function() {
                                 window.location.href = "/bahmni/home/index.html#/dashboard";
                             }, 500);
