@@ -33,40 +33,6 @@
         "  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; " +
         "} " +
 
-        /* 2. Top Header Branding (SJD White Theme) */
-        "header, .opd-header, .opd-header-top, .reg-header, .opd-header-bottom, .header { " +
-        "  background-color: #ffffff !important; " +
-        "  background-image: none !important; " +
-        "  border-bottom: 1px solid #eef2f7 !important; " +
-        "  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important; " +
-        "} " +
-        "header a:not(.btn):not(.button):not(.confirm), " +
-        "header span:not(.btn):not(.button):not(.confirm), " +
-        "header i, " +
-        ".opd-header a:not(.btn):not(.button):not(.confirm), " +
-        ".opd-header span:not(.btn):not(.button):not(.confirm), " +
-        ".opd-header i, " +
-        ".reg-header a:not(.btn):not(.button):not(.confirm), " +
-        ".reg-header span:not(.btn):not(.button):not(.confirm), " +
-        ".reg-header i { " +
-        "  color: #4a5568 !important; " +
-        "} " +
-        "header a:not(.btn):not(.button):not(.confirm):hover, " +
-        ".opd-header a:not(.btn):not(.button):not(.confirm):hover, " +
-        ".reg-header a:not(.btn):not(.button):not(.confirm):hover { " +
-        "  color: #1a202c !important; " +
-        "} " +
-        ".dashboard-header-right-wrapper button.dialog-button-group { color: #4a5568 !important; } " +
-        ".opd-header-bottom button, .opd-header-bottom a.back-btn, .reg-header button, .reg-header a.back-btn { " +
-        "  background: #f1f5f9 !important; " +
-        "  border: 1px solid #cbd5e1 !important; " +
-        "  border-radius: 6px !important; " +
-        "  color: #4a5568 !important; " +
-        "} " +
-        ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover, .reg-header button:hover, .reg-header a.back-btn:hover { " +
-        "  background: #e2e8f0 !important; " +
-        "  color: #1a202c !important; " +
-        "} " +
         "#sjd-close-visit-btn { " +
         "  background: #d32f2f !important; " +
         "  color: #ffffff !important; " +
@@ -93,6 +59,7 @@
         "  background: #07245c !important; " +
         "} " +
         "#sjd-header-brand img { " +
+        "  filter: brightness(0) invert(1) !important; " +
         "  display: inline-block !important; " +
         "  vertical-align: middle !important; " +
         "} " +
@@ -258,20 +225,10 @@
             logoImg.src = '/bahmni/images/sjd-logo.svg';
             logoImg.style.height = '32px';
             logoImg.style.width = '34px';
-            logoImg.style.marginRight = '12px';
+            logoImg.style.marginRight = '0px';
             logoImg.style.verticalAlign = 'middle';
             
-            var textSpan = document.createElement('span');
-            textSpan.innerHTML = 'St John of God Hospital <small style="color: #64748b; font-size: 11px; font-weight: 500; margin-left: 6px;">Sierra Leone</small>';
-            textSpan.style.color = '#2d3748';
-            textSpan.style.fontWeight = '700';
-            textSpan.style.fontSize = '16px';
-            textSpan.style.fontFamily = "'Inter', sans-serif";
-            textSpan.style.verticalAlign = 'middle';
-            textSpan.style.whiteSpace = 'nowrap';
-            
             homeLink.appendChild(logoImg);
-            homeLink.appendChild(textSpan);
             brandDiv.appendChild(homeLink);
             
             header.insertBefore(brandDiv, header.firstChild);
