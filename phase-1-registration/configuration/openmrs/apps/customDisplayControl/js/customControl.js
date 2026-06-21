@@ -33,14 +33,28 @@
         "  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; " +
         "} " +
 
-        /* 2. Top Header Branding (SJD Dark Blue) */
-        "header, .opd-header, .opd-header-top, .registration-header { " +
-        "  background-color: #0b3583 !important; " +
+        /* 2. Top Header Branding (Clean white theme) */
+        "header, .opd-header, .opd-header-top, .registration-header, .opd-header-bottom, .header { " +
+        "  background-color: #ffffff !important; " +
         "  background-image: none !important; " +
-        "  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important; " +
+        "  border-bottom: 1px solid #eef2f7 !important; " +
+        "  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important; " +
         "} " +
-        ".opd-header-top a, .opd-header-bottom a, header a, .registration-header a, .opd-header-top span, .opd-header-bottom span { " +
-        "  color: #ffffff !important; " +
+        "header a:not(.btn):not(.button):not(.confirm), " +
+        "header span:not(.btn):not(.button):not(.confirm), " +
+        "header i, " +
+        ".opd-header a:not(.btn):not(.button):not(.confirm), " +
+        ".opd-header span:not(.btn):not(.button):not(.confirm), " +
+        ".opd-header i, " +
+        ".registration-header a:not(.btn):not(.button):not(.confirm), " +
+        ".registration-header span:not(.btn):not(.button):not(.confirm), " +
+        ".registration-header i { " +
+        "  color: #4a5568 !important; " +
+        "} " +
+        "header a:not(.btn):not(.button):not(.confirm):hover, " +
+        ".opd-header a:not(.btn):not(.button):not(.confirm):hover, " +
+        ".registration-header a:not(.btn):not(.button):not(.confirm):hover { " +
+        "  color: #0b3583 !important; " +
         "} " +
 
         /* 3. Dashboard Layout Cards */
@@ -87,13 +101,14 @@
         "  background-color: #1b5e20 !important; " +
         "} " +
         ".opd-header-bottom button, .opd-header-bottom a.back-btn { " +
-        "  background: rgba(255, 255, 255, 0.15) !important; " +
-        "  border: 1px solid rgba(255, 255, 255, 0.25) !important; " +
+        "  background: #f1f5f9 !important; " +
+        "  border: 1px solid #cbd5e1 !important; " +
         "  border-radius: 6px !important; " +
-        "  color: #ffffff !important; " +
+        "  color: #0b3583 !important; " +
         "} " +
         ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover { " +
-        "  background: rgba(255, 255, 255, 0.25) !important; " +
+        "  background: #e2e8f0 !important; " +
+        "  color: #0b3583 !important; " +
         "} " +
 
         /* 6. Clean Table Styling */
@@ -164,5 +179,51 @@
     link.rel = 'shortcut icon';
     link.href = '/bahmni/images/sjd-logo.svg';
     document.getElementsByTagName('head')[0].appendChild(link);
+})();
+
+// 5. DYNAMIC SJD HEADER BRANDING
+(function() {
+    function injectSJDHeaderBranding() {
+        var header = document.querySelector('.opd-header-top') || document.querySelector('.registration-header') || document.querySelector('header');
+        if (header && !document.getElementById('sjd-header-brand')) {
+            var brandDiv = document.createElement('div');
+            brandDiv.id = 'sjd-header-brand';
+            brandDiv.style.display = 'inline-flex';
+            brandDiv.style.alignItems = 'center';
+            brandDiv.style.marginRight = '20px';
+            brandDiv.style.float = 'left';
+            brandDiv.style.height = '100%';
+            brandDiv.style.padding = '5px 15px';
+            
+            var homeLink = document.createElement('a');
+            homeLink.href = '/bahmni/home';
+            homeLink.style.display = 'inline-flex';
+            homeLink.style.alignItems = 'center';
+            homeLink.style.textDecoration = 'none';
+            
+            var logoImg = document.createElement('img');
+            logoImg.src = '/bahmni/images/sjd-logo.svg';
+            logoImg.style.height = '32px';
+            logoImg.style.marginRight = '12px';
+            logoImg.style.verticalAlign = 'middle';
+            
+            var textSpan = document.createElement('span');
+            textSpan.innerHTML = 'St John of God Hospital <small style="color: #64748b; font-size: 11px; font-weight: 500; margin-left: 6px;">Sierra Leone</small>';
+            textSpan.style.color = '#0b3583';
+            textSpan.style.fontWeight = '700';
+            textSpan.style.fontSize = '16px';
+            textSpan.style.fontFamily = "'Inter', sans-serif";
+            textSpan.style.verticalAlign = 'middle';
+            
+            homeLink.appendChild(logoImg);
+            homeLink.appendChild(textSpan);
+            brandDiv.appendChild(homeLink);
+            
+            header.insertBefore(brandDiv, header.firstChild);
+        }
+    }
+    // Poll to keep brand present across page transitions in SPA
+    setInterval(injectSJDHeaderBranding, 1000);
+    injectSJDHeaderBranding();
 })();
 
