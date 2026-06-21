@@ -1,0 +1,498 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Delivery Pregnancy",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "New",
+              "display": "New"
+            },
+            "uuid": "fbe9b090-e859-4c30-b821-99e608669eaf"
+          },
+          {
+            "name": {
+              "name": "Old",
+              "display": "Old"
+            },
+            "uuid": "f61aee5f-e83d-483f-a85a-900b5346d231"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "4429a7f2-9fa2-4c9f-803e-8e041a3c4aa1"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "DELIVERY_PREGNANCY_1",
+        "type": "label",
+        "id": "1",
+        "value": "Delivery Pregnancy"
+      }
+    },
+    {
+      "id": "2",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Delivery Post Natal Clinic",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Yes",
+              "display": "Yes"
+            },
+            "uuid": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "No",
+              "display": "No"
+            },
+            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "531cb78d-e553-4727-90b3-2ac52131c68a"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 1
+        }
+      },
+      "label": {
+        "translationKey": "DELIVERY_POST_NATAL_CLINIC_2",
+        "type": "label",
+        "id": "2",
+        "value": "Delivery Post Natal Clinic"
+      }
+    },
+    {
+      "id": "3",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Delivery Outcome",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Alive",
+              "display": "Alive"
+            },
+            "uuid": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "FSB",
+              "display": "FSB"
+            },
+            "uuid": "efe10569-2c3c-425b-b895-3fe5bbecb94d"
+          },
+          {
+            "name": {
+              "name": "MSB",
+              "display": "MSB"
+            },
+            "uuid": "5b71321f-5a66-4046-b3c1-cbfbf5ead870"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "13c38e2b-d77b-487f-87ae-f28998001880"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 2
+        }
+      },
+      "label": {
+        "translationKey": "DELIVERY_OUTCOME_3",
+        "type": "label",
+        "id": "3",
+        "value": "Delivery Outcome"
+      }
+    },
+    {
+      "id": "4",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Delivery Type",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Normal",
+              "display": "Normal"
+            },
+            "uuid": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "C-S",
+              "display": "C-S"
+            },
+            "uuid": "e75a2658-24c0-437d-938f-31246cfb50b8"
+          },
+          {
+            "name": {
+              "name": "Assisted",
+              "display": "Assisted"
+            },
+            "uuid": "166425AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "3b351d5b-668c-45c3-8b3f-b2094aa9057d"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 3
+        }
+      },
+      "label": {
+        "translationKey": "DELIVERY_TYPE_4",
+        "type": "label",
+        "id": "4",
+        "value": "Delivery Type"
+      }
+    },
+    {
+      "id": "5",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Delivery Maternal Death",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Yes",
+              "display": "Yes"
+            },
+            "uuid": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "No",
+              "display": "No"
+            },
+            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "d315ae5c-0820-4ad4-ac98-eac1c76091a0"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 4
+        }
+      },
+      "label": {
+        "translationKey": "DELIVERY_MATERNAL_DEATH_5",
+        "type": "label",
+        "id": "5",
+        "value": "Delivery Maternal Death"
+      }
+    },
+    {
+      "id": "6",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Delivery Morbidity",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Pre Eclampsia",
+              "display": "Pre Eclampsia"
+            },
+            "uuid": "f80c42c3-7e5f-4da3-89db-9f31cee9280c"
+          },
+          {
+            "name": {
+              "name": "Eclampsia",
+              "display": "Eclampsia"
+            },
+            "uuid": "118744AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Antepartum Haemorrhage",
+              "display": "Antepartum Haemorrhage"
+            },
+            "uuid": "4524d521-24da-467c-80a0-258740137bde"
+          },
+          {
+            "name": {
+              "name": "Intrapartum Hemorrhage",
+              "display": "Intrapartum Hemorrhage"
+            },
+            "uuid": "45547ccb-6646-424d-87fe-61e8af241641"
+          },
+          {
+            "name": {
+              "name": "Postpartum Haemorrhage",
+              "display": "Postpartum Haemorrhage"
+            },
+            "uuid": "151703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Ectopic Pregnancy",
+              "display": "Ectopic Pregnancy"
+            },
+            "uuid": "d860eb09-3569-4bb7-b84d-25f4a15678db"
+          },
+          {
+            "name": {
+              "name": "Obstructed Labour",
+              "display": "Obstructed Labour"
+            },
+            "uuid": "0f1d28aa-afee-4cb8-8daf-874d29486780"
+          },
+          {
+            "name": {
+              "name": "Puerperal sepsis",
+              "display": "Puerperal sepsis"
+            },
+            "uuid": "130AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Ruptured Uterus",
+              "display": "Ruptured Uterus"
+            },
+            "uuid": "9e56ba3e-c408-426b-b1c8-a7377dcca7c5"
+          },
+          {
+            "name": {
+              "name": "Severe anaemia",
+              "display": "Severe anaemia"
+            },
+            "uuid": "162044AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "IUFD",
+              "display": "IUFD"
+            },
+            "uuid": "06e6634f-fcd1-4c86-94eb-49443bde08a3"
+          },
+          {
+            "name": {
+              "name": "Fetal Distress",
+              "display": "Fetal Distress"
+            },
+            "uuid": "118256AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "UTI",
+              "display": "UTI"
+            },
+            "uuid": "5e539f10-23c5-4876-8ec6-5bef58c334df"
+          },
+          {
+            "name": {
+              "name": "Fetal Macrosomia",
+              "display": "Fetal Macrosomia"
+            },
+            "uuid": "8203ad64-b860-4add-8a5c-132787a1a496"
+          },
+          {
+            "name": {
+              "name": "Premature Rupture of Membrane",
+              "display": "Premature Rupture of Membrane"
+            },
+            "uuid": "c8790290-40ef-447c-b4e7-2da0d469fba7"
+          },
+          {
+            "name": {
+              "name": "Spontaneous vaginal delivery",
+              "display": "Spontaneous vaginal delivery"
+            },
+            "uuid": "1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Incomplete abortion",
+              "display": "Incomplete abortion"
+            },
+            "uuid": "117242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Preterm Labour",
+              "display": "Preterm Labour"
+            },
+            "uuid": "52f6b65f-812a-4d8b-b45b-7449cddcb24f"
+          },
+          {
+            "name": {
+              "name": "Prolonged Labour",
+              "display": "Prolonged Labour"
+            },
+            "uuid": "0254f000-87a8-4a70-87b6-5022baea0ff3"
+          },
+          {
+            "name": {
+              "name": "Previous CS",
+              "display": "Previous CS"
+            },
+            "uuid": "50cd624b-b986-42ea-920e-44d8cbf80e41"
+          },
+          {
+            "name": {
+              "name": "Trauma",
+              "display": "Trauma"
+            },
+            "uuid": "6611c5fd-5b07-4667-a53c-ccce0e4ece33"
+          },
+          {
+            "name": {
+              "name": "Hyperemesis",
+              "display": "Hyperemesis"
+            },
+            "uuid": "c07dd8aa-6699-406c-82b1-b7a06a8857da"
+          },
+          {
+            "name": {
+              "name": "Retained Placenta",
+              "display": "Retained Placenta"
+            },
+            "uuid": "127592AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Complete abortion",
+              "display": "Complete abortion"
+            },
+            "uuid": "120295AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "False Labour",
+              "display": "False Labour"
+            },
+            "uuid": "5ecf7ec5-1c2e-4f8e-a1a2-76fce0ad0aba"
+          },
+          {
+            "name": {
+              "name": "CPD",
+              "display": "CPD"
+            },
+            "uuid": "ffaa92fc-e9f9-4f0b-b914-dec0e8a1360c"
+          },
+          {
+            "name": {
+              "name": "Induction",
+              "display": "Induction"
+            },
+            "uuid": "c1f483cc-3adb-4724-9636-5c59701712e6"
+          },
+          {
+            "name": {
+              "name": "Retain 2nd Twin",
+              "display": "Retain 2nd Twin"
+            },
+            "uuid": "d0dc63b2-cdea-4c28-9437-5906dcdc37ef"
+          },
+          {
+            "name": {
+              "name": "Breech presentation",
+              "display": "Breech presentation"
+            },
+            "uuid": "146922AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Transverse lie",
+              "display": "Transverse lie"
+            },
+            "uuid": "124261AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "516f5368-46de-427a-8222-a019078af3a4"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 5
+        }
+      },
+      "label": {
+        "translationKey": "DELIVERY_MORBIDITY_6",
+        "type": "label",
+        "id": "6",
+        "value": "Delivery Morbidity"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "a5623d94-a464-478c-a9d1-993e77b50fe1",
+  "name": "Delivery"
+}

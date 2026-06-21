@@ -1,0 +1,165 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Death Note Unit",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Paediatrics",
+              "display": "Paediatrics"
+            },
+            "uuid": "f80be31b-ce1b-45a7-b8b8-4fa927d93797"
+          },
+          {
+            "name": {
+              "name": "General Ward",
+              "display": "General Ward"
+            },
+            "uuid": "e339064b-9c39-4014-9471-1c6150da49a7"
+          },
+          {
+            "name": {
+              "name": "Maternity",
+              "display": "Maternity"
+            },
+            "uuid": "3493465d-dd34-406d-918c-f2583551b8f7"
+          },
+          {
+            "name": {
+              "name": "Emergency",
+              "display": "Emergency"
+            },
+            "uuid": "e401a423-38cc-4a57-96ab-2a80204db3b8"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "685ac2e0-5478-4c90-8a3c-75824379edde"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "DEATH_NOTE_UNIT_1",
+        "type": "label",
+        "id": "1",
+        "value": "Death Note Unit"
+      }
+    },
+    {
+      "id": "2",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Death Note Admission Datetime",
+        "datatype": "Datetime",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "e994bbca-4973-4943-a3be-5ee9f5b95950"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 1
+        }
+      },
+      "label": {
+        "translationKey": "DEATH_NOTE_ADMISSION_DATETIME_2",
+        "type": "label",
+        "id": "2",
+        "value": "Death Note Admission Datetime"
+      }
+    },
+    {
+      "id": "3",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Death Note Death Datetime",
+        "datatype": "Datetime",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "302bb049-013e-4d4f-b4e1-fec152d26d7d"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 2
+        }
+      },
+      "label": {
+        "translationKey": "DEATH_NOTE_DEATH_DATETIME_3",
+        "type": "label",
+        "id": "3",
+        "value": "Death Note Death Datetime"
+      }
+    },
+    {
+      "id": "4",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Morbidity",
+        "datatype": "Text",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "72c061e7-e5f6-46c8-89c6-3d9ef57a870c"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 3
+        }
+      },
+      "label": {
+        "translationKey": "MORBIDITY_4",
+        "type": "label",
+        "id": "4",
+        "value": "Morbidity"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "1970dc93-22d2-4053-b0fb-71af1f340aaf",
+  "name": "Death Note"
+}

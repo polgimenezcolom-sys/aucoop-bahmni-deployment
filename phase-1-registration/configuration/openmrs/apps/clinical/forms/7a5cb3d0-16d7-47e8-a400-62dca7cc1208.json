@@ -1,0 +1,58 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Abortion Complication",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Yes",
+              "display": "Yes"
+            },
+            "uuid": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "No",
+              "display": "No"
+            },
+            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "fc5d835e-98e1-455f-90c7-57288c32045e"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "ABORTION_COMPLICATION_1",
+        "type": "label",
+        "id": "1",
+        "value": "Abortion Complication"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "7a5cb3d0-16d7-47e8-a400-62dca7cc1208",
+  "name": "Abortion"
+}

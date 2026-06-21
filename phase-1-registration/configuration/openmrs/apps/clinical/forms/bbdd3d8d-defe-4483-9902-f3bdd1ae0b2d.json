@@ -1,0 +1,43 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Morbidity",
+        "datatype": "Text",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "72c061e7-e5f6-46c8-89c6-3d9ef57a870c"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "MORBIDITY_1",
+        "type": "label",
+        "id": "1",
+        "value": "Morbidity"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "bbdd3d8d-defe-4483-9902-f3bdd1ae0b2d",
+  "name": "Under 5 Consultancy"
+}

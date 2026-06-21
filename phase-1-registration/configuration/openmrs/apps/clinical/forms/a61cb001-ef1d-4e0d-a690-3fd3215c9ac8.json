@@ -1,0 +1,187 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Folder Number",
+        "datatype": "Text",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "73594ee2-a507-4059-80cd-6ec5aae53e10"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": false,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "FOLDER_NUMBER_1",
+        "type": "label",
+        "id": "1",
+        "value": "Folder Number"
+      }
+    },
+    {
+      "id": "2",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Bed State Datetime",
+        "datatype": "Datetime",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "e00e8b1c-d69c-4e93-8e7d-94404e6f70cf"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 1
+        }
+      },
+      "label": {
+        "translationKey": "BED_STATE_DATETIME_2",
+        "type": "label",
+        "id": "2",
+        "value": "Bed State Datetime"
+      }
+    },
+    {
+      "id": "3",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Sponsored",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Yes",
+              "display": "Yes"
+            },
+            "uuid": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "No",
+              "display": "No"
+            },
+            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "085271b4-10b8-449d-b549-074e0e58a8a7"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 2
+        }
+      },
+      "label": {
+        "translationKey": "SPONSORED_3",
+        "type": "label",
+        "id": "3",
+        "value": "Sponsored"
+      }
+    },
+    {
+      "id": "4",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Ward Action",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Admission",
+              "display": "Admission"
+            },
+            "uuid": "d3758a50-5e07-11ef-8f7c-0242ac120002"
+          },
+          {
+            "name": {
+              "name": "Transfer into ward",
+              "display": "Transfer into ward"
+            },
+            "uuid": "68b4f888-a43c-44cd-b953-fecc58fe66b3"
+          },
+          {
+            "name": {
+              "name": "Transfer from ward",
+              "display": "Transfer from ward"
+            },
+            "uuid": "37a0a95b-50d8-42b6-b7c0-e33c85c4a79b"
+          },
+          {
+            "name": {
+              "name": "Discharged",
+              "display": "Discharged"
+            },
+            "uuid": "1692AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Death",
+              "display": "Death"
+            },
+            "uuid": "3db61739-38f8-4ebc-963e-ec256270d3c9"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "a9123839-486b-4785-9dc0-ccba9b2caad5"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 3
+        }
+      },
+      "label": {
+        "translationKey": "WARD_ACTION_4",
+        "type": "label",
+        "id": "4",
+        "value": "Ward Action"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "a61cb001-ef1d-4e0d-a690-3fd3215c9ac8",
+  "name": "Emergency Bed State"
+}

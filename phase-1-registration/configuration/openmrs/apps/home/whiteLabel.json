@@ -1,0 +1,24 @@
+{
+	"homePage": {
+		"header_text": "<b>ST. JOHN OF GOD HOSPITAL<br />Lunsar, Sierra Leone</b>",
+		"logo": "/bahmni/images/sjd-logo.svg",
+		"title_text": "Electronic Medical Records"
+	},
+	"loginPage": {
+		"logo": "/bahmni/images/sjd-logo.svg",
+		"showHeaderText": true,
+		"showTitleText": true
+	},
+	"helpLink": {
+		"url": ""
+	},
+	"landingPage": [
+		{
+			"enabled": true,
+			"name": "clinicalService",
+			"title": "Clinical Service",
+			"logo": "/bahmni/images/sjd-logo.svg",
+			"link": "/bahmni/home"
+		}
+	]
+}

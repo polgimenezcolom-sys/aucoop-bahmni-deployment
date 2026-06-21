@@ -1,0 +1,219 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD XRay Body Part",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Chest/Ribs",
+              "display": "Chest/Ribs"
+            },
+            "uuid": "73b70ea5-1b4d-4b66-9f37-f70711eb231b"
+          },
+          {
+            "name": {
+              "name": "Cervical",
+              "display": "Cervical"
+            },
+            "uuid": "643AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Pelvis",
+              "display": "Pelvis"
+            },
+            "uuid": "166323AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Skull",
+              "display": "Skull"
+            },
+            "uuid": "96492a17-45cb-4a85-9715-467eac848da7"
+          },
+          {
+            "name": {
+              "name": "Shoulder",
+              "display": "Shoulder"
+            },
+            "uuid": "166306AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Ankle",
+              "display": "Ankle"
+            },
+            "uuid": "166161AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Leg",
+              "display": "Leg"
+            },
+            "uuid": "b706d706-67af-4cbc-9b2a-f856884d8eea"
+          },
+          {
+            "name": {
+              "name": "Forearm",
+              "display": "Forearm"
+            },
+            "uuid": "166241AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Abdomen",
+              "display": "Abdomen"
+            },
+            "uuid": "1808AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Wrist",
+              "display": "Wrist"
+            },
+            "uuid": "166277AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Knee",
+              "display": "Knee"
+            },
+            "uuid": "166168AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Femur",
+              "display": "Femur"
+            },
+            "uuid": "03dba87a-36d2-4583-a717-2d0425ef822a"
+          },
+          {
+            "name": {
+              "name": "Hand",
+              "display": "Hand"
+            },
+            "uuid": "164385AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Elbow",
+              "display": "Elbow"
+            },
+            "uuid": "166231AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Foot",
+              "display": "Foot"
+            },
+            "uuid": "164387AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Sinuses",
+              "display": "Sinuses"
+            },
+            "uuid": "a5d991fa-68fd-4867-85c8-dd8ef8d0547a"
+          },
+          {
+            "name": {
+              "name": "Clavicle",
+              "display": "Clavicle"
+            },
+            "uuid": "166225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Jaw",
+              "display": "Jaw"
+            },
+            "uuid": "eeed6a15-1875-4469-97a6-0d88bdaa67ac"
+          },
+          {
+            "name": {
+              "name": "Humurus",
+              "display": "Humurus"
+            },
+            "uuid": "cd21d705-5e89-40c2-9b89-1403f6c028b6"
+          },
+          {
+            "name": {
+              "name": "Hip",
+              "display": "Hip"
+            },
+            "uuid": "166245AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "T-Spine",
+              "display": "T-Spine"
+            },
+            "uuid": "54fb0ae4-1933-433a-b0c2-24ca37274d22"
+          },
+          {
+            "name": {
+              "name": "Arm",
+              "display": "Arm"
+            },
+            "uuid": "21b9af1c-ebda-44f3-aeb6-45a8738c0310"
+          },
+          {
+            "name": {
+              "name": "Mandible",
+              "display": "Mandible"
+            },
+            "uuid": "166335AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Barium Meal",
+              "display": "Barium Meal"
+            },
+            "uuid": "6ca0d9bf-54f2-4440-89d0-eebae083c291"
+          },
+          {
+            "name": {
+              "name": "Hysteronosalpingography",
+              "display": "Hysteronosalpingography"
+            },
+            "uuid": "8bef054c-ad17-4afe-aed7-9fb48d2c98ab"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "2a34c254-c0d4-460a-85e1-123c8aa11082"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "XRAY_BODY_PART_1",
+        "type": "label",
+        "id": "1",
+        "value": "XRay Body Part"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "c3e276de-ea8c-4311-be1b-29af118ebc0e",
+  "name": "X-Ray"
+}

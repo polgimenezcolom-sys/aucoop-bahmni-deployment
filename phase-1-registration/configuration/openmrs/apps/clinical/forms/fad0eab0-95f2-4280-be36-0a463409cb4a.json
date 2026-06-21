@@ -1,0 +1,79 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Echo Category",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Obstetrics",
+              "display": "Obstetrics"
+            },
+            "uuid": "2c8d67f8-83a5-4237-88e4-76978256f760"
+          },
+          {
+            "name": {
+              "name": "Gynecology",
+              "display": "Gynecology"
+            },
+            "uuid": "e4537dcb-77b4-49f0-9b88-2ba99c9264e4"
+          },
+          {
+            "name": {
+              "name": "Abdomen",
+              "display": "Abdomen"
+            },
+            "uuid": "1808AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Ecg",
+              "display": "Ecg"
+            },
+            "uuid": "1e012c7f-4ff8-4c47-a259-446564fba901"
+          },
+          {
+            "name": {
+              "name": "Other",
+              "display": "Other"
+            },
+            "uuid": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "12143725-1f33-4878-ba20-e0291639794f"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "ECHO_CATEGORY_1",
+        "type": "label",
+        "id": "1",
+        "value": "Echo Category"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "fad0eab0-95f2-4280-be36-0a463409cb4a",
+  "name": "Echo Activities"
+}

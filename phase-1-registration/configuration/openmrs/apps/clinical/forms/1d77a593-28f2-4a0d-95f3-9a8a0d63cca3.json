@@ -1,0 +1,181 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Vaccine Type",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "BCG",
+              "display": "BCG"
+            },
+            "uuid": "9d2d443a-e655-4e74-b4df-40684263fb69"
+          },
+          {
+            "name": {
+              "name": "Measles 1",
+              "display": "Measles 1"
+            },
+            "uuid": "a9336596-a2b9-40dd-9759-ce0cf5745959"
+          },
+          {
+            "name": {
+              "name": "Measles 2",
+              "display": "Measles 2"
+            },
+            "uuid": "48ffeb7d-93dd-4901-a841-c5029c5513af"
+          },
+          {
+            "name": {
+              "name": "DPT-Heb-Hib",
+              "display": "DPT-Heb-Hib"
+            },
+            "uuid": "c9d5bb6a-7359-48dc-bbd3-08603425d7f0"
+          },
+          {
+            "name": {
+              "name": "OPV",
+              "display": "OPV"
+            },
+            "uuid": "0c85bff9-fa74-468b-bbfa-0634739c412e"
+          },
+          {
+            "name": {
+              "name": "Yellow fever",
+              "display": "Yellow fever"
+            },
+            "uuid": "122759AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Tetanus Pregnant",
+              "display": "Tetanus Pregnant"
+            },
+            "uuid": "93ef4f58-0006-4f90-9b32-db149f8d59f3"
+          },
+          {
+            "name": {
+              "name": "Tetanus Others",
+              "display": "Tetanus Others"
+            },
+            "uuid": "8681693e-530c-4fce-96f5-881219ea1b1a"
+          },
+          {
+            "name": {
+              "name": "PCV",
+              "display": "PCV"
+            },
+            "uuid": "e68653d8-7377-4e00-87de-344711a94a27"
+          },
+          {
+            "name": {
+              "name": "ROTA",
+              "display": "ROTA"
+            },
+            "uuid": "85f2e987-1df5-4e8c-a379-2010cd58164a"
+          },
+          {
+            "name": {
+              "name": "Vitamin A",
+              "display": "Vitamin A"
+            },
+            "uuid": "86339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Albendazole",
+              "display": "Albendazole"
+            },
+            "uuid": "70439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "IPV",
+              "display": "IPV"
+            },
+            "uuid": "746141f4-e129-4a2a-918a-a7a5ae76ce95"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "e44e0c73-6733-4108-bdf2-0c697640fd92"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "VACCINE_TYPE_1",
+        "type": "label",
+        "id": "1",
+        "value": "Vaccine Type"
+      }
+    },
+    {
+      "id": "2",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Vaccine Outreach",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Yes",
+              "display": "Yes"
+            },
+            "uuid": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "No",
+              "display": "No"
+            },
+            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "635b682a-8e5c-4b3a-8cb4-543da8ad56e5"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 1
+        }
+      },
+      "label": {
+        "translationKey": "VACCINE_OUTREACH_2",
+        "type": "label",
+        "id": "2",
+        "value": "Vaccine Outreach"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "1d77a593-28f2-4a0d-95f3-9a8a0d63cca3",
+  "name": "Vaccine"
+}
