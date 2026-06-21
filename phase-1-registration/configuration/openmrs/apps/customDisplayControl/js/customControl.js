@@ -34,7 +34,7 @@
         "} " +
 
         /* 2. Top Header Branding (Clean white theme) */
-        "header, .opd-header, .opd-header-top, .registration-header, .opd-header-bottom, .header { " +
+        "header, .opd-header, .opd-header-top, .reg-header, .opd-header-bottom, .header { " +
         "  background-color: #ffffff !important; " +
         "  background-image: none !important; " +
         "  border-bottom: 1px solid #eef2f7 !important; " +
@@ -46,16 +46,17 @@
         ".opd-header a:not(.btn):not(.button):not(.confirm), " +
         ".opd-header span:not(.btn):not(.button):not(.confirm), " +
         ".opd-header i, " +
-        ".registration-header a:not(.btn):not(.button):not(.confirm), " +
-        ".registration-header span:not(.btn):not(.button):not(.confirm), " +
-        ".registration-header i { " +
+        ".reg-header a:not(.btn):not(.button):not(.confirm), " +
+        ".reg-header span:not(.btn):not(.button):not(.confirm), " +
+        ".reg-header i { " +
         "  color: #4a5568 !important; " +
         "} " +
         "header a:not(.btn):not(.button):not(.confirm):hover, " +
         ".opd-header a:not(.btn):not(.button):not(.confirm):hover, " +
-        ".registration-header a:not(.btn):not(.button):not(.confirm):hover { " +
+        ".reg-header a:not(.btn):not(.button):not(.confirm):hover { " +
         "  color: #0b3583 !important; " +
         "} " +
+        ".dashboard-header-right-wrapper button.dialog-button-group { color: #ffffff !important; } " +
 
         /* 3. Dashboard Layout Cards */
         ".dashboard-section, .patient-dashboard .section-container, .section, .visit-page .section-container { " +
@@ -184,7 +185,7 @@
 // 5. DYNAMIC SJD HEADER BRANDING
 (function() {
     function injectSJDHeaderBranding() {
-        var header = document.querySelector('.opd-header-top') || document.querySelector('.registration-header') || document.querySelector('header');
+        var header = document.querySelector('.opd-header-top') || document.querySelector('.reg-header') || document.querySelector('#consultation-header') || document.querySelector('header');
         if (header && !document.getElementById('sjd-header-brand')) {
             var brandDiv = document.createElement('div');
             brandDiv.id = 'sjd-header-brand';
@@ -214,6 +215,7 @@
             textSpan.style.fontSize = '16px';
             textSpan.style.fontFamily = "'Inter', sans-serif";
             textSpan.style.verticalAlign = 'middle';
+            textSpan.style.whiteSpace = 'nowrap';
             
             homeLink.appendChild(logoImg);
             homeLink.appendChild(textSpan);
@@ -226,4 +228,3 @@
     setInterval(injectSJDHeaderBranding, 1000);
     injectSJDHeaderBranding();
 })();
-
