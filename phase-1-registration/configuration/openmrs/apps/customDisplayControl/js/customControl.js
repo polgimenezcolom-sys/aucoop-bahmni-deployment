@@ -66,34 +66,47 @@
         "  background: rgba(255, 255, 255, 0.25) !important; " +
         "} " +
         "#sjd-close-visit-btn { " +
-        "  background-color: #d32f2f !important; " +
+        "  background: #d32f2f !important; " +
         "  color: #ffffff !important; " +
         "  border: none !important; " +
         "  border-radius: 6px !important; " +
         "  padding: 8px 16px !important; " +
         "  font-weight: bold !important; " +
-        "  transition: background-color 0.2s ease !important; " +
+        "  transition: background 0.2s ease !important; " +
         "} " +
         "#sjd-close-visit-btn:hover { " +
-        "  background-color: #b71c1c !important; " +
+        "  background: #b71c1c !important; " +
         "} " +
         "#sjd-show-all-btn { " +
-        "  background-color: #0b3583 !important; " +
+        "  background: #0b3583 !important; " +
         "  color: #ffffff !important; " +
         "  border: none !important; " +
         "  border-radius: 6px !important; " +
         "  padding: 8px 16px !important; " +
         "  font-weight: bold !important; " +
         "  margin-left: 10px !important; " +
-        "  transition: background-color 0.2s ease !important; " +
+        "  transition: background 0.2s ease !important; " +
         "} " +
         "#sjd-show-all-btn:hover { " +
-        "  background-color: #07245c !important; " +
+        "  background: #07245c !important; " +
         "} " +
         "#sjd-header-brand img { " +
         "  filter: brightness(0) invert(1) !important; " +
         "  display: inline-block !important; " +
         "  vertical-align: middle !important; " +
+        "} " +
+        ".clint-logo-wrapper { " +
+        "  text-align: center !important; " +
+        "  display: block !important; " +
+        "  float: none !important; " +
+        "} " +
+        ".clint-logo-wrapper .implementor-logo { " +
+        "  display: inline-block !important; " +
+        "  float: none !important; " +
+        "  margin: 0 auto !important; " +
+        "} " +
+        ".clint-logo-wrapper .title_text { " +
+        "  display: none !important; " +
         "} " +
 
         /* 3. Dashboard Layout Cards */

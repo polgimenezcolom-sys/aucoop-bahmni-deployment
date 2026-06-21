@@ -75,22 +75,6 @@ Bahmni.Registration.customValidator = {
             closeBtn.id = 'sjd-close-visit-btn';
             closeBtn.type = 'button';
             closeBtn.textContent = 'Close Visit';
-            closeBtn.style.backgroundColor = '#d32f2f'; // Material red
-            closeBtn.style.color = '#ffffff';
-            closeBtn.style.border = 'none';
-            closeBtn.style.borderRadius = '4px';
-            closeBtn.style.padding = '8px 16px';
-            closeBtn.style.marginLeft = '10px';
-            closeBtn.style.fontWeight = 'bold';
-            closeBtn.style.cursor = 'pointer';
-            closeBtn.style.transition = 'background-color 0.2s';
-            
-            closeBtn.addEventListener('mouseover', function() {
-                closeBtn.style.backgroundColor = '#b71c1c';
-            });
-            closeBtn.addEventListener('mouseout', function() {
-                closeBtn.style.backgroundColor = '#d32f2f';
-            });
             
             closeBtn.onclick = function() {
                 handleCloseVisit(visitUuid);
@@ -195,29 +179,29 @@ Bahmni.Registration.customValidator = {
                 "  background: rgba(255, 255, 255, 0.25) !important; " +
                 "} " +
                 "#sjd-close-visit-btn { " +
-                "  background-color: #d32f2f !important; " +
+                "  background: #d32f2f !important; " +
                 "  color: #ffffff !important; " +
                 "  border: none !important; " +
                 "  border-radius: 6px !important; " +
                 "  padding: 8px 16px !important; " +
                 "  font-weight: bold !important; " +
-                "  transition: background-color 0.2s ease !important; " +
+                "  transition: background 0.2s ease !important; " +
                 "} " +
                 "#sjd-close-visit-btn:hover { " +
-                "  background-color: #b71c1c !important; " +
+                "  background: #b71c1c !important; " +
                 "} " +
                 "#sjd-show-all-btn { " +
-                "  background-color: #0b3583 !important; " +
+                "  background: #0b3583 !important; " +
                 "  color: #ffffff !important; " +
                 "  border: none !important; " +
                 "  border-radius: 6px !important; " +
                 "  padding: 8px 16px !important; " +
                 "  font-weight: bold !important; " +
                 "  margin-left: 10px !important; " +
-                "  transition: background-color 0.2s ease !important; " +
+                "  transition: background 0.2s ease !important; " +
                 "} " +
                 "#sjd-show-all-btn:hover { " +
-                "  background-color: #07245c !important; " +
+                "  background: #07245c !important; " +
                 "} " +
                 "#sjd-header-brand img { " +
                 "  filter: brightness(0) invert(1) !important; " +
