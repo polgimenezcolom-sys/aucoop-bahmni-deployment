@@ -246,15 +246,23 @@
         var onreadystatechange = this.onreadystatechange;
         this.onreadystatechange = function() {
             if (self.readyState === 4) {
+                var urlStr = (self._url || '').toString();
+                console.log("[SJD] XHR completed:", self._method, urlStr, "Status:", self.status);
+                
                 if (self.status >= 200 && self.status < 300) {
-                    var match = window.location.hash.match(/\/patient\/([a-f0-9\-]{36})\/dashboard\/concept-set-group\/observations/i);
+                    var match = window.location.hash.match(/\/patient\/([a-f0-9\-]{36})\/dashboard\/concept-set-group/i);
+                    console.log("[SJD] Hash match:", match ? match[1] : "none", "Hash:", window.location.hash);
+                    
                     if (match && self._method === 'POST') {
-                        var isSaveObs = (self._url.indexOf('/ws/rest/v1/bahmnicore/encounter') !== -1 || 
-                                         self._url.indexOf('/ws/rest/v1/encounter') !== -1 || 
-                                         self._url.indexOf('/ws/rest/v1/obs') !== -1);
+                        var isSaveObs = (urlStr.indexOf('/ws/rest/v1/bahmnicore/encounter') !== -1 || 
+                                         urlStr.indexOf('/ws/rest/v1/encounter') !== -1 || 
+                                         urlStr.indexOf('/ws/rest/v1/obs') !== -1);
+                        console.log("[SJD] Is save observations request:", isSaveObs);
+                        
                         if (isSaveObs) {
                             var patientUuid = match[1];
                             setTimeout(function() {
+                                console.log("[SJD] Redirecting to general dashboard...");
                                 window.location.hash = "/default/patient/" + patientUuid + "/dashboard?currentTab=DASHBOARD_TAB_GENERAL_KEY";
                             }, 500);
                         }
