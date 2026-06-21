@@ -698,5 +698,53 @@
         "Patient Identifier"
       ]
     }
+  },
+  "boardOpdEmergencyMorbidity": {
+    "name": "Board - OPD & Emergency Morbidity",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/opd_emergency_morbidity.sql"
+    }
+  },
+  "boardIpdAdmissionsDischarges": {
+    "name": "Board - Inpatient Admissions & Discharges Summary",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/ipd_admissions_discharges.sql"
+    }
+  },
+  "boardMaternityDeliveryOutcomes": {
+    "name": "Board - Maternity & Delivery Outcomes",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/maternity_delivery_outcomes.sql"
+    }
+  },
+  "boardTheatreActivitySummary": {
+    "name": "Board - Theatre Activity Summary",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/theatre_activity_summary.sql"
+    }
+  },
+  "boardMortalityCauseOfDeath": {
+    "name": "Board - Mortality & Cause of Death",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/mortality_cause_of_death.sql"
+    }
+  },
+  "boardNeonatalPerformance": {
+    "name": "Board - Neonatal Performance & Outcomes",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/neonatal_performance.sql"
+    }
   }
 }
