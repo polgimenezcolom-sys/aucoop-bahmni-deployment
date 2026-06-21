@@ -310,7 +310,7 @@ Bahmni.Registration.customValidator = {
 
     setInterval(runPoller, 1000);
 
-    // Redirect to dashboard on successful visit details save POST request (when "Save" is clicked in visit details page)
+    // Redirect to dashboard on successful visit details save POST request (when "Save" is clicked in visit details page/modal)
     (function() {
         var open = XMLHttpRequest.prototype.open;
         var send = XMLHttpRequest.prototype.send;
@@ -326,20 +326,28 @@ Bahmni.Registration.customValidator = {
             var onreadystatechange = this.onreadystatechange;
             this.onreadystatechange = function() {
                 if (self.readyState === 4) {
+                    var urlStr = (self._url || '').toString();
+                    console.log("[SJD Reg] XHR completed:", self._method, urlStr, "Status:", self.status);
+                    
                     if (self.status >= 200 && self.status < 300) {
                         var isVisitDetailsSave = false;
                         if (self._method === 'POST') {
-                            var isEncounterOrObs = (self._url.indexOf('/ws/rest/v1/bahmnicore/encounter') !== -1 || 
-                                                   self._url.indexOf('/ws/rest/v1/encounter') !== -1 || 
-                                                   self._url.indexOf('/ws/rest/v1/obs') !== -1);
+                            var isEncounterOrObs = (urlStr.indexOf('encounter') !== -1 || 
+                                                   urlStr.indexOf('obs') !== -1);
+                            
+                            console.log("[SJD Reg] POST request to visit/encounter/obs:", isEncounterOrObs, "Hash:", window.location.hash);
+                            
                             if (isEncounterOrObs) {
-                                if (window.location.hash.match(/\/patient\/[a-f0-9\-]{36}\/visit/i)) {
+                                // In Registration app, saving any encounter is a visit details save
+                                if (window.location.pathname.indexOf('/bahmni/registration') !== -1) {
                                     isVisitDetailsSave = true;
                                 }
                             }
                         }
+                        console.log("[SJD Reg] isVisitDetailsSave:", isVisitDetailsSave);
                         if (isVisitDetailsSave) {
                             setTimeout(function() {
+                                console.log("[SJD Reg] Redirecting to dashboard...");
                                 window.location.href = "/bahmni/home/index.html#/dashboard";
                             }, 500);
                         }

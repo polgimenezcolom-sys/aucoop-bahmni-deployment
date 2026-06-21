@@ -254,9 +254,8 @@
                     console.log("[SJD] Hash match:", match ? match[1] : "none", "Hash:", window.location.hash);
                     
                     if (match && self._method === 'POST') {
-                        var isSaveObs = (urlStr.indexOf('/ws/rest/v1/bahmnicore/encounter') !== -1 || 
-                                         urlStr.indexOf('/ws/rest/v1/encounter') !== -1 || 
-                                         urlStr.indexOf('/ws/rest/v1/obs') !== -1);
+                        var isSaveObs = (urlStr.indexOf('encounter') !== -1 || 
+                                         urlStr.indexOf('obs') !== -1);
                         console.log("[SJD] Is save observations request:", isSaveObs);
                         
                         if (isSaveObs) {
