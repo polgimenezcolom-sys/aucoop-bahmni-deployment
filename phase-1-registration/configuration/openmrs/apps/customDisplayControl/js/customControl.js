@@ -105,7 +105,7 @@
         "  float: none !important; " +
         "  margin: 0 auto !important; " +
         "} " +
-        ".clint-logo-wrapper .title_text { " +
+        ".clint-logo-wrapper .title_text, .clint-logo-wrapper .title-text, .title_text, .title-text { " +
         "  display: none !important; " +
         "} " +
 

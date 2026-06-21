@@ -208,6 +208,19 @@ Bahmni.Registration.customValidator = {
                 "  display: inline-block !important; " +
                 "  vertical-align: middle !important; " +
                 "} " +
+                ".clint-logo-wrapper { " +
+                "  text-align: center !important; " +
+                "  display: block !important; " +
+                "  float: none !important; " +
+                "} " +
+                ".clint-logo-wrapper .implementor-logo { " +
+                "  display: inline-block !important; " +
+                "  float: none !important; " +
+                "  margin: 0 auto !important; " +
+                "} " +
+                ".clint-logo-wrapper .title_text, .clint-logo-wrapper .title-text, .title_text, .title-text { " +
+                "  display: none !important; " +
+                "} " +
 
                 /* 3. Dashboard Layout Cards */
                 ".dashboard-section, .patient-dashboard .section-container, .section, .visit-page .section-container { " +
