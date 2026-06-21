@@ -197,7 +197,7 @@
             brandDiv.style.padding = '5px 15px';
             
             var homeLink = document.createElement('a');
-            homeLink.href = '/bahmni/home';
+            homeLink.href = '/';
             homeLink.style.display = 'inline-flex';
             homeLink.style.alignItems = 'center';
             homeLink.style.textDecoration = 'none';
