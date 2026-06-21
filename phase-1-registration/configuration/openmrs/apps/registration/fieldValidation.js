@@ -167,18 +167,18 @@ Bahmni.Registration.customValidator = {
                 "header a:not(.btn):not(.button):not(.confirm):hover, " +
                 ".opd-header a:not(.btn):not(.button):not(.confirm):hover, " +
                 ".reg-header a:not(.btn):not(.button):not(.confirm):hover { " +
-                "  color: #0b3583 !important; " +
+                "  color: #1a202c !important; " +
                 "} " +
-                ".dashboard-header-right-wrapper button.dialog-button-group { color: #ffffff !important; } " +
+                ".dashboard-header-right-wrapper button.dialog-button-group { color: #4a5568 !important; } " +
                 ".opd-header-bottom button, .opd-header-bottom a.back-btn, .reg-header button, .reg-header a.back-btn { " +
                 "  background: #f1f5f9 !important; " +
                 "  border: 1px solid #cbd5e1 !important; " +
                 "  border-radius: 6px !important; " +
-                "  color: #0b3583 !important; " +
+                "  color: #4a5568 !important; " +
                 "} " +
                 ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover, .reg-header button:hover, .reg-header a.back-btn:hover { " +
                 "  background: #e2e8f0 !important; " +
-                "  color: #0b3583 !important; " +
+                "  color: #1a202c !important; " +
                 "} " +
                 "#sjd-close-visit-btn { " +
                 "  background: #d32f2f !important; " +
@@ -346,7 +346,7 @@ Bahmni.Registration.customValidator = {
             
             var textSpan = document.createElement('span');
             textSpan.innerHTML = 'St John of God Hospital <small style="color: #64748b; font-size: 11px; font-weight: 500; margin-left: 6px;">Sierra Leone</small>';
-            textSpan.style.color = '#0b3583';
+            textSpan.style.color = '#2d3748';
             textSpan.style.fontWeight = '700';
             textSpan.style.fontSize = '16px';
             textSpan.style.fontFamily = "'Inter', sans-serif";
