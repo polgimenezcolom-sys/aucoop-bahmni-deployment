@@ -33,12 +33,11 @@
         "  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; " +
         "} " +
 
-        /* 2. Top Header Branding (Clean white theme) */
+        /* 2. Top Header Branding (SJD Dark Blue) */
         "header, .opd-header, .opd-header-top, .reg-header, .opd-header-bottom, .header { " +
-        "  background-color: #ffffff !important; " +
+        "  background-color: #0b3583 !important; " +
         "  background-image: none !important; " +
-        "  border-bottom: 1px solid #eef2f7 !important; " +
-        "  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important; " +
+        "  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important; " +
         "} " +
         "header a:not(.btn):not(.button):not(.confirm), " +
         "header span:not(.btn):not(.button):not(.confirm), " +
@@ -49,14 +48,48 @@
         ".reg-header a:not(.btn):not(.button):not(.confirm), " +
         ".reg-header span:not(.btn):not(.button):not(.confirm), " +
         ".reg-header i { " +
-        "  color: #4a5568 !important; " +
+        "  color: #ffffff !important; " +
         "} " +
         "header a:not(.btn):not(.button):not(.confirm):hover, " +
         ".opd-header a:not(.btn):not(.button):not(.confirm):hover, " +
         ".reg-header a:not(.btn):not(.button):not(.confirm):hover { " +
-        "  color: #0b3583 !important; " +
+        "  color: #cbd5e1 !important; " +
         "} " +
         ".dashboard-header-right-wrapper button.dialog-button-group { color: #ffffff !important; } " +
+        ".opd-header-bottom button, .opd-header-bottom a.back-btn, .reg-header button, .reg-header a.back-btn { " +
+        "  background: rgba(255, 255, 255, 0.15) !important; " +
+        "  border: 1px solid rgba(255, 255, 255, 0.25) !important; " +
+        "  border-radius: 6px !important; " +
+        "  color: #ffffff !important; " +
+        "} " +
+        ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover, .reg-header button:hover, .reg-header a.back-btn:hover { " +
+        "  background: rgba(255, 255, 255, 0.25) !important; " +
+        "} " +
+        "#sjd-close-visit-btn { " +
+        "  background-color: #d32f2f !important; " +
+        "  color: #ffffff !important; " +
+        "  border: none !important; " +
+        "  border-radius: 6px !important; " +
+        "  padding: 8px 16px !important; " +
+        "  font-weight: bold !important; " +
+        "  transition: background-color 0.2s ease !important; " +
+        "} " +
+        "#sjd-close-visit-btn:hover { " +
+        "  background-color: #b71c1c !important; " +
+        "} " +
+        "#sjd-show-all-btn { " +
+        "  background-color: #0b3583 !important; " +
+        "  color: #ffffff !important; " +
+        "  border: none !important; " +
+        "  border-radius: 6px !important; " +
+        "  padding: 8px 16px !important; " +
+        "  font-weight: bold !important; " +
+        "  margin-left: 10px !important; " +
+        "  transition: background-color 0.2s ease !important; " +
+        "} " +
+        "#sjd-show-all-btn:hover { " +
+        "  background-color: #07245c !important; " +
+        "} " +
 
         /* 3. Dashboard Layout Cards */
         ".dashboard-section, .patient-dashboard .section-container, .section, .visit-page .section-container { " +
@@ -205,12 +238,13 @@
             var logoImg = document.createElement('img');
             logoImg.src = '/bahmni/images/sjd-logo.svg';
             logoImg.style.height = '32px';
+            logoImg.style.width = '34px';
             logoImg.style.marginRight = '12px';
             logoImg.style.verticalAlign = 'middle';
             
             var textSpan = document.createElement('span');
-            textSpan.innerHTML = 'St John of God Hospital <small style="color: #64748b; font-size: 11px; font-weight: 500; margin-left: 6px;">Sierra Leone</small>';
-            textSpan.style.color = '#0b3583';
+            textSpan.innerHTML = 'St John of God Hospital <small style="color: #cbd5e1; font-size: 11px; font-weight: 500; margin-left: 6px;">Sierra Leone</small>';
+            textSpan.style.color = '#ffffff';
             textSpan.style.fontWeight = '700';
             textSpan.style.fontSize = '16px';
             textSpan.style.fontFamily = "'Inter', sans-serif";
