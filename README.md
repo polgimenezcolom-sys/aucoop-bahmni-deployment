@@ -47,29 +47,39 @@ Each phase represents a real-world deployment milestone. Phases build progressiv
 - 8+ GB RAM (24 GB recommended for running alongside GNU Health)
 
 ### Installation
-```bash
-# 1. Clone the repository
-git clone https://github.com/polgimenezcolom-sys/aucoop-bahmni-deployment.git
 
-# 2. Follow the installation guide
-cd aucoop-bahmni-deployment/install
-cat README.md
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/polgimenezcolom-sys/aucoop-bahmni-deployment.git
+   ```
 
-# 3. Start Bahmni (from bahmni-docker directory)
-docker compose up -d
+2. **Follow the Docker Setup Guide**:
+   Follow [install/README.md](install/README.md) to set up Docker Desktop, download the official `bahmni-docker` release, and configure your basic environments.
 
-# 4. Wait ~15-25 minutes for first initialization
-# 5. Open http://localhost/ (superman / Admin123)
-```
+3. **Link SJD Custom Configuration**:
+   In your `bahmni-docker/bahmni-standard/.env` file, point the `CONFIG_VOLUME` variable to the cloned repository configuration folder:
+   ```env
+   CONFIG_VOLUME=C:/path/to/aucoop-bahmni-deployment/phase-1-registration/configuration
+   ```
+   *(Note: Change the path to match the absolute directory where you cloned the repository on your machine, using forward slashes `/`)*
 
-### Phase Configuration
-```bash
-# Follow each phase guide in order
-cd phase-1-registration && cat README.md
-cd phase-2-lab-pharmacy && cat README.md
-cd phase-3-billing && cat README.md
-cd phase-4-reporting && cat README.md
-```
+4. **Start Bahmni**:
+   From the `bahmni-docker/bahmni-standard` directory, start the services:
+   ```bash
+   docker compose up -d
+   ```
+   On first boot, the system will take 15-25 minutes to initialize. All database tables and role configurations will be run automatically via registered database migrations (Liquibase).
+
+5. **Open Bahmni**:
+   Access the system at `http://localhost/` using credentials `superman` / `Admin123`.
+
+### Phase Details & Manual Configurations
+Once running, follow each phase folder's guide in order to perform manual administrative setup (such as setting up users, locations, and provider accounts):
+* [Phase 1: Registration & Basic EMR](phase-1-registration/README.md)
+* [Phase 2: Lab & Pharmacy](phase-2-lab-pharmacy/README.md)
+* [Phase 3: Billing & Admin](phase-3-billing/README.md)
+* [Phase 4: Reporting & Epi](phase-4-reporting/README.md)
+
 
 ## 📂 Repository Structure
 
