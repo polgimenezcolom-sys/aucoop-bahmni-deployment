@@ -1,3 +1,21 @@
+-- ============================================================================
+-- REPORT QUERY: MORTALITY & CAUSE OF DEATH SUMMARY
+-- Location: St. John of God Hospital (SJD), Sierra Leone
+--
+-- PURPOSE:
+-- Summarizes patient deaths by department/ward unit, patient gender, age group, 
+-- cause of death, and the average hours elapsed from admission to death.
+--
+-- DESIGN RATIONALE:
+-- Focuses on 'SJD Death Note Death Datetime' (concept_id = 57578) as the primary indicator
+-- of a mortality event. It joins:
+-- - Reporting Unit (57631)
+-- - Admission Datetime (57577) to calculate time-to-death duration using TIMESTAMPDIFF
+-- - Morbidity/Cause of Death (57517)
+-- This critical report allows the board to monitor quality of care, response times, and
+-- major mortality causes.
+-- ============================================================================
+
 SELECT 
   cn_unit.name AS 'Reporting Department / Unit',
   p.gender AS 'Gender',

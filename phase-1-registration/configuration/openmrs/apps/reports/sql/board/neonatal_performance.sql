@@ -1,3 +1,20 @@
+-- ============================================================================
+-- REPORT QUERY: NEONATAL PERFORMANCE & OUTCOMES SUMMARY
+-- Location: St. John of God Hospital (SJD), Sierra Leone
+--
+-- PURPOSE:
+-- Summarizes Neonatal Intensive Care Unit (NICU) performance metrics, including
+-- gestational term (Preterm/Term), primary diagnosis, feeding type/method,
+-- discharge outcome results, and average birth/admission vs. discharge weights.
+--
+-- DESIGN RATIONALE:
+-- Driven by the 'SJD Neonatal Term' concept (concept_id = 57616). LEFT JOINs 
+-- details from the same NICU encounter: Diagnosis (57617), Feeding Type (57620), 
+-- Feeding Method (57621), Result (57622), Admission Weight (57548), and
+-- Discharge Weight (57550). This detailed review helps the board assess neonatology
+-- quality and survival trends.
+-- ============================================================================
+
 SELECT 
   cn_term.name AS 'Gestational Term',
   cn_diag.name AS 'Diagnosis',

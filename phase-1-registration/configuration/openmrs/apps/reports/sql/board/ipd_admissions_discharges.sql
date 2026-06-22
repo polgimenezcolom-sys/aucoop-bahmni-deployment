@@ -1,3 +1,23 @@
+-- ============================================================================
+-- REPORT QUERY: INPATIENT FLOW (ADMISSIONS & DISCHARGES) SUMMARY
+-- Location: St. John of God Hospital (SJD), Sierra Leone
+--
+-- PURPOSE:
+-- Aggregates patient flows (Admissions, Discharges, Deaths, Transfers) per ward 
+-- and patient gender.
+--
+-- DESIGN RATIONALE:
+-- Focuses on the 'SJD Ward Action' concept (concept_id = 57510) and optional
+-- 'SJD Transfer Destination' concept (concept_id = 57512) to trace internal
+-- patient movements between hospital departments. Helps the board monitor ward
+-- occupancy and clinical resource distribution.
+--
+-- JOIN STRATEGY:
+-- - Uses INNER JOINs for patient and ward action concept names.
+-- - LEFT JOINs are used for transfer destinations, since not all ward actions
+--   are transfers (e.g., admissions/discharges do not have a destination ward).
+-- ============================================================================
+
 SELECT 
   cn_action.name AS 'Ward Action',
   COALESCE(cn_dest.name, 'Default Ward') AS 'Destination Ward',

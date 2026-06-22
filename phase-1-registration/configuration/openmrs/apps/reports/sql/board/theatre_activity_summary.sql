@@ -1,3 +1,18 @@
+-- ============================================================================
+-- REPORT QUERY: THEATRE ACTIVITY SUMMARY (SURGERY)
+-- Location: St. John of God Hospital (SJD), Sierra Leone
+--
+-- PURPOSE:
+-- Summarizes operating theatre activity including surgical type (Major/Minor),
+-- surgical urgency (Elective/Emergency), and actual procedure names.
+--
+-- DESIGN RATIONALE:
+-- Uses 'SJD Theatre Type' (concept_id = 57514) to drive the row set, and LEFT JOINs
+-- 'SJD Theatre Reason' (concept_id = 57513) and 'SJD Procedure Name' (concept_id = 57519)
+-- from the same surgical encounter. This allows the board to monitor operating theatre
+-- utilization and workload.
+-- ============================================================================
+
 SELECT 
   cn_type.name AS 'Surgical Type',
   cn_reason.name AS 'Surgical Reason',

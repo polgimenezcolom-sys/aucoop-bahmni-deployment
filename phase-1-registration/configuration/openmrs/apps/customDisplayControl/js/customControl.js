@@ -1,7 +1,22 @@
-// ============================================================
-// SJD HOSPITAL - Phase 1 Custom UI
-// Header Cleanup & Branding ONLY (no CSS theme)
-// ============================================================
+// ============================================================================
+// ST. JOHN OF GOD HOSPITAL (SJD) - EMR PHASE 1 SYSTEM CUSTOMIZATION
+// Location: Lunsar, Sierra Leone
+//
+// DESIGN RATIONALE & IMPOSSIBILITIES OVERVIEW:
+// In standard Bahmni deployments, core user interface styles are pre-compiled and
+// minified inside heavy frontend assets. Overriding them in the source code requires
+// rebuilding the entire frontend container, which makes upstream updates highly invasive
+// and breaks standard upgrade paths.
+//
+// NON-INVASIVE OVERRIDE STRATEGY:
+// To bypass this limitation, we utilize client-side JavaScript injection via this file
+// (customControl.js) which is natively loaded by the Bahmni clinical app on startup.
+// This script dynamically:
+// 1. Overrides document titles based on current routes.
+// 2. Injects custom stylesheets with high-specificity selectors (!important) to
+//    re-style the default teal theme into SJD White/Blue branding, import Google Fonts,
+//    and scale SVG assets correctly.
+// ============================================================================
 
 // 1. PAGE TITLE OVERRIDES
 (function() {
@@ -33,48 +48,37 @@
         "  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; " +
         "} " +
 
-        "#sjd-close-visit-btn { " +
-        "  background: #d32f2f !important; " +
+        /* 2. Top Header Branding (SJD Dark Blue) */
+        "header, .opd-header, .opd-header-top, .reg-header, .opd-header-bottom, .header { " +
+        "  background-color: #0b3583 !important; " +
+        "  background-image: none !important; " +
+        "  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important; " +
+        "} " +
+        "header a:not(.btn):not(.button):not(.confirm), " +
+        "header span:not(.btn):not(.button):not(.confirm), " +
+        "header i, " +
+        ".opd-header a:not(.btn):not(.button):not(.confirm), " +
+        ".opd-header span:not(.btn):not(.button):not(.confirm), " +
+        ".opd-header i, " +
+        ".reg-header a:not(.btn):not(.button):not(.confirm), " +
+        ".reg-header span:not(.btn):not(.button):not(.confirm), " +
+        ".reg-header i { " +
         "  color: #ffffff !important; " +
-        "  border: none !important; " +
+        "} " +
+        "header a:not(.btn):not(.button):not(.confirm):hover, " +
+        ".opd-header a:not(.btn):not(.button):not(.confirm):hover, " +
+        ".reg-header a:not(.btn):not(.button):not(.confirm):hover { " +
+        "  color: #cbd5e1 !important; " +
+        "} " +
+        ".dashboard-header-right-wrapper button.dialog-button-group { color: #ffffff !important; } " +
+        ".opd-header-bottom button, .opd-header-bottom a.back-btn, .reg-header button, .reg-header a.back-btn { " +
+        "  background: rgba(255, 255, 255, 0.15) !important; " +
+        "  border: 1px solid rgba(255, 255, 255, 0.25) !important; " +
         "  border-radius: 6px !important; " +
-        "  padding: 8px 16px !important; " +
-        "  font-weight: bold !important; " +
-        "  transition: background 0.2s ease !important; " +
-        "} " +
-        "#sjd-close-visit-btn:hover { " +
-        "  background: #b71c1c !important; " +
-        "} " +
-        "#sjd-show-all-btn { " +
-        "  background: #0b3583 !important; " +
         "  color: #ffffff !important; " +
-        "  border: none !important; " +
-        "  border-radius: 6px !important; " +
-        "  padding: 8px 16px !important; " +
-        "  font-weight: bold !important; " +
-        "  margin-left: 10px !important; " +
-        "  transition: background 0.2s ease !important; " +
         "} " +
-        "#sjd-show-all-btn:hover { " +
-        "  background: #07245c !important; " +
-        "} " +
-        "#sjd-header-brand img { " +
-        "  filter: brightness(0) invert(1) !important; " +
-        "  display: inline-block !important; " +
-        "  vertical-align: middle !important; " +
-        "} " +
-        ".clint-logo-wrapper { " +
-        "  text-align: center !important; " +
-        "  display: block !important; " +
-        "  float: none !important; " +
-        "} " +
-        ".clint-logo-wrapper .implementor-logo { " +
-        "  display: inline-block !important; " +
-        "  float: none !important; " +
-        "  margin: 0 auto !important; " +
-        "} " +
-        ".clint-logo-wrapper .title_text, .clint-logo-wrapper .title-text, .title_text, .title-text { " +
-        "  display: none !important; " +
+        ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover, .reg-header button:hover, .reg-header a.back-btn:hover { " +
+        "  background: rgba(255, 255, 255, 0.25) !important; " +
         "} " +
 
         /* 3. Dashboard Layout Cards */
@@ -120,7 +124,16 @@
         "button.confirm:hover, .button.confirm:hover, button.save-btn:hover { " +
         "  background-color: #1b5e20 !important; " +
         "} " +
-
+        ".opd-header-bottom button, .opd-header-bottom a.back-btn { " +
+        "  background: #f1f5f9 !important; " +
+        "  border: 1px solid #cbd5e1 !important; " +
+        "  border-radius: 6px !important; " +
+        "  color: #0b3583 !important; " +
+        "} " +
+        ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover { " +
+        "  background: #e2e8f0 !important; " +
+        "  color: #0b3583 !important; " +
+        "} " +
 
         /* 6. Clean Table Styling */
         "table { " +
@@ -215,11 +228,20 @@
             var logoImg = document.createElement('img');
             logoImg.src = '/bahmni/images/sjd-logo.svg';
             logoImg.style.height = '32px';
-            logoImg.style.width = '34px';
-            logoImg.style.marginRight = '0px';
+            logoImg.style.marginRight = '12px';
             logoImg.style.verticalAlign = 'middle';
             
+            var textSpan = document.createElement('span');
+            textSpan.innerHTML = 'St John of God Hospital <small style="color: #cbd5e1; font-size: 11px; font-weight: 500; margin-left: 6px;">Sierra Leone</small>';
+            textSpan.style.color = '#ffffff';
+            textSpan.style.fontWeight = '700';
+            textSpan.style.fontSize = '16px';
+            textSpan.style.fontFamily = "'Inter', sans-serif";
+            textSpan.style.verticalAlign = 'middle';
+            textSpan.style.whiteSpace = 'nowrap';
+            
             homeLink.appendChild(logoImg);
+            homeLink.appendChild(textSpan);
             brandDiv.appendChild(homeLink);
             
             header.insertBefore(brandDiv, header.firstChild);
@@ -228,50 +250,4 @@
     // Poll to keep brand present across page transitions in SPA
     setInterval(injectSJDHeaderBranding, 1000);
     injectSJDHeaderBranding();
-})();
-
-// 6. CLINICAL OBSERVATION SAVE REDIRECT
-(function() {
-    var open = XMLHttpRequest.prototype.open;
-    var send = XMLHttpRequest.prototype.send;
-    
-    XMLHttpRequest.prototype.open = function(method, url) {
-        this._method = method;
-        this._url = url;
-        return open.apply(this, arguments);
-    };
-    
-    XMLHttpRequest.prototype.send = function() {
-        var self = this;
-        var onreadystatechange = this.onreadystatechange;
-        this.onreadystatechange = function() {
-            if (self.readyState === 4) {
-                var urlStr = (self._url || '').toString();
-                console.log("[SJD] XHR completed:", self._method, urlStr, "Status:", self.status);
-                
-                if (self.status >= 200 && self.status < 300) {
-                    var match = window.location.hash.match(/\/patient\/([a-f0-9\-]{36})\/dashboard\/concept-set-group/i);
-                    console.log("[SJD] Hash match:", match ? match[1] : "none", "Hash:", window.location.hash);
-                    
-                    if (match && self._method === 'POST') {
-                        var isSaveObs = (urlStr.indexOf('encounter') !== -1 || 
-                                         urlStr.indexOf('obs') !== -1);
-                        console.log("[SJD] Is save observations request:", isSaveObs);
-                        
-                        if (isSaveObs) {
-                            var patientUuid = match[1];
-                            setTimeout(function() {
-                                console.log("[SJD] Redirecting to general dashboard...");
-                                window.location.hash = "/default/patient/" + patientUuid + "/dashboard?currentTab=DASHBOARD_TAB_GENERAL_KEY";
-                            }, 500);
-                        }
-                    }
-                }
-            }
-            if (onreadystatechange) {
-                return onreadystatechange.apply(this, arguments);
-            }
-        };
-        return send.apply(this, arguments);
-    };
 })();

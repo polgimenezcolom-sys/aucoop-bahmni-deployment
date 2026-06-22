@@ -19,9 +19,21 @@ Bahmni.Registration.customValidator = {
     }
 };
 
-// ============================================================
-// SJD HOSPITAL - Custom Actions & DOM Pollers
-// ============================================================
+// ============================================================================
+// ST. JOHN OF GOD HOSPITAL (SJD) - REGISTRATION APP CUSTOM ACTIONS & POLLERS
+//
+// THE DOM POLLER PARADIGM:
+// Because Bahmni is a Single Page Application (SPA) driven by AngularJS, navigation
+// does not trigger full page reloads. AngularJS dynamically destroys and recreates
+// DOM templates when switching views (e.g., searching for a patient vs. viewing
+// patient details).
+//
+// Since we cannot hook into AngularJS's internal routing without modifying compiled
+// source code, we use a DOM Polling approach (runPoller executed via setInterval every 1s).
+// This poller detects the current URL state (hash route) and safely injects custom UI
+// controls (like the 'Close Visit' and 'Show All Patients' buttons) whenever their target
+// parent container elements appear in the DOM.
+// ============================================================================
 (function() {
     var activeVisit = null;
 
@@ -35,7 +47,6 @@ Bahmni.Registration.customValidator = {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200 || xhr.status === 204) {
-                    alert("Visit closed successfully!");
                     window.location.href = "/bahmni/home/index.html#/dashboard";
                 } else {
                     alert("Failed to close visit. Error: " + xhr.responseText);
@@ -75,6 +86,22 @@ Bahmni.Registration.customValidator = {
             closeBtn.id = 'sjd-close-visit-btn';
             closeBtn.type = 'button';
             closeBtn.textContent = 'Close Visit';
+            closeBtn.style.backgroundColor = '#d32f2f'; // Material red
+            closeBtn.style.color = '#ffffff';
+            closeBtn.style.border = 'none';
+            closeBtn.style.borderRadius = '4px';
+            closeBtn.style.padding = '8px 16px';
+            closeBtn.style.marginLeft = '10px';
+            closeBtn.style.fontWeight = 'bold';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.transition = 'background-color 0.2s';
+            
+            closeBtn.addEventListener('mouseover', function() {
+                closeBtn.style.backgroundColor = '#b71c1c';
+            });
+            closeBtn.addEventListener('mouseout', function() {
+                closeBtn.style.backgroundColor = '#d32f2f';
+            });
             
             closeBtn.onclick = function() {
                 handleCloseVisit(visitUuid);
@@ -86,16 +113,33 @@ Bahmni.Registration.customValidator = {
 
     function injectShowAllBtn() {
         if (window.location.hash.indexOf('/search') !== -1) {
-            var nameForm = document.querySelector('form[name="searchByNameForm"]');
-            if (nameForm) {
-                var nameInput = nameForm.querySelector('#name');
-                var searchBtn = nameForm.querySelector('button[type="submit"]');
+            var nameInput = document.getElementById('name');
+            if (nameInput) {
+                var form = nameInput.form || nameInput.closest('form');
+                var searchBtn = form ? form.querySelector('button[type="submit"]') : null;
                 
-                if (nameInput && searchBtn && !document.getElementById('sjd-show-all-btn')) {
+                if (searchBtn && !document.getElementById('sjd-show-all-btn')) {
+                    var btnContainer = searchBtn.parentNode;
                     var showAllBtn = document.createElement('button');
                     showAllBtn.id = 'sjd-show-all-btn';
                     showAllBtn.type = 'button';
                     showAllBtn.textContent = 'Show All Patients';
+                    showAllBtn.style.backgroundColor = '#0b3583'; // SJD Blue
+                    showAllBtn.style.color = '#ffffff';
+                    showAllBtn.style.border = 'none';
+                    showAllBtn.style.borderRadius = '4px';
+                    showAllBtn.style.padding = '8px 16px';
+                    showAllBtn.style.marginLeft = '10px';
+                    showAllBtn.style.fontWeight = 'bold';
+                    showAllBtn.style.cursor = 'pointer';
+                    showAllBtn.style.transition = 'background-color 0.2s';
+                    
+                    showAllBtn.addEventListener('mouseover', function() {
+                        showAllBtn.style.backgroundColor = '#07245c';
+                    });
+                    showAllBtn.addEventListener('mouseout', function() {
+                        showAllBtn.style.backgroundColor = '#0b3583';
+                    });
                     
                     showAllBtn.onclick = function() {
                         nameInput.value = '%';
@@ -106,7 +150,7 @@ Bahmni.Registration.customValidator = {
                         }, 50);
                     };
                     
-                    searchBtn.parentNode.appendChild(showAllBtn);
+                    btnContainer.appendChild(showAllBtn);
                 }
             }
         }
@@ -138,87 +182,40 @@ Bahmni.Registration.customValidator = {
             var style = document.createElement('style');
             style.id = 'sjd-phase1-cleanup';
             style.textContent = 
-                /* 0. Import Google Font */
                 "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); " +
-
-                /* 1. Global Font Override */
                 "body, input, button, select, textarea, .opd-header, .patient-dashboard, .patient-name, .form-field { " +
                 "  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; " +
                 "} " +
-
-                "#sjd-close-visit-btn { " +
-                "  background: #d32f2f !important; " +
+                "header, .opd-header, .opd-header-top, .reg-header, .opd-header-bottom, .header { " +
+                "  background-color: #0b3583 !important; " +
+                "  background-image: none !important; " +
+                "  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important; " +
+                "} " +
+                "header a:not(.btn):not(.button):not(.confirm), " +
+                "header span:not(.btn):not(.button):not(.confirm), " +
+                "header i, " +
+                ".opd-header a:not(.btn):not(.button):not(.confirm), " +
+                ".opd-header span:not(.btn):not(.button):not(.confirm), " +
+                ".opd-header i, " +
+                ".reg-header a:not(.btn):not(.button):not(.confirm), " +
+                ".reg-header span:not(.btn):not(.button):not(.confirm), " +
+                ".reg-header i { " +
                 "  color: #ffffff !important; " +
-                "  border: none !important; " +
+                "} " +
+                "header a:not(.btn):not(.button):not(.confirm):hover, " +
+                ".opd-header a:not(.btn):not(.button):not(.confirm):hover, " +
+                ".reg-header a:not(.btn):not(.button):not(.confirm):hover { " +
+                "  color: #cbd5e1 !important; " +
+                "} " +
+                ".opd-header-bottom button, .opd-header-bottom a.back-btn, .reg-header button, .reg-header a.back-btn { " +
+                "  background: rgba(255, 255, 255, 0.15) !important; " +
+                "  border: 1px solid rgba(255, 255, 255, 0.25) !important; " +
                 "  border-radius: 6px !important; " +
-                "  padding: 8px 16px !important; " +
-                "  font-weight: bold !important; " +
-                "  transition: background 0.2s ease !important; " +
-                "} " +
-                "#sjd-close-visit-btn:hover { " +
-                "  background: #b71c1c !important; " +
-                "} " +
-                "#sjd-show-all-btn { " +
-                "  background: #0b3583 !important; " +
                 "  color: #ffffff !important; " +
-                "  border: none !important; " +
-                "  border-radius: 6px !important; " +
-                "  padding: 8px 16px !important; " +
-                "  font-weight: bold !important; " +
-                "  margin-left: 10px !important; " +
-                "  transition: background 0.2s ease !important; " +
                 "} " +
-                "#sjd-show-all-btn:hover { " +
-                "  background: #07245c !important; " +
+                ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover, .reg-header button:hover, .reg-header a.back-btn:hover { " +
+                "  background: rgba(255, 255, 255, 0.25) !important; " +
                 "} " +
-                "#sjd-header-brand img { " +
-                "  filter: brightness(0) invert(1) !important; " +
-                "  display: inline-block !important; " +
-                "  vertical-align: middle !important; " +
-                "} " +
-                ".clint-logo-wrapper { " +
-                "  text-align: center !important; " +
-                "  display: block !important; " +
-                "  float: none !important; " +
-                "} " +
-                ".clint-logo-wrapper .implementor-logo { " +
-                "  display: inline-block !important; " +
-                "  float: none !important; " +
-                "  margin: 0 auto !important; " +
-                "} " +
-                ".clint-logo-wrapper .title_text, .clint-logo-wrapper .title-text, .title_text, .title-text { " +
-                "  display: none !important; " +
-                "} " +
-
-                /* 3. Dashboard Layout Cards */
-                ".dashboard-section, .patient-dashboard .section-container, .section, .visit-page .section-container { " +
-                "  background: #ffffff !important; " +
-                "  border-radius: 8px !important; " +
-                "  border: 1px solid #eef2f7 !important; " +
-                "  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important; " +
-                "  padding: 16px !important; " +
-                "  margin-bottom: 16px !important; " +
-                "  transition: transform 0.2s ease, box-shadow 0.2s ease !important; " +
-                "} " +
-                ".dashboard-section:hover { " +
-                "  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important; " +
-                "} " +
-
-                /* 4. Rounded and Glowing Form Inputs */
-                "input[type='text'], input[type='password'], input[type='number'], select, textarea { " +
-                "  padding: 8px 12px !important; " +
-                "  border: 1px solid #dcdfe6 !important; " +
-                "  border-radius: 6px !important; " +
-                "  font-size: 14px !important; " +
-                "  transition: all 0.2s ease !important; " +
-                "} " +
-                "input[type='text']:focus, input[type='password']:focus, input[type='number']:focus, select:focus, textarea:focus { " +
-                "  outline: none !important; " +
-                "  border-color: #0b3583 !important; " +
-                "  box-shadow: 0 0 0 3px rgba(11, 53, 131, 0.15) !important; " +
-                "} " +
-
-                /* 5. Modern Button Theme */
                 "button, .button, input[type='button'], input[type='submit'] { " +
                 "  border-radius: 6px !important; " +
                 "  padding: 8px 16px !important; " +
@@ -232,47 +229,7 @@ Bahmni.Registration.customValidator = {
                 "} " +
                 "button.confirm:hover, .button.confirm:hover, button.save-btn:hover { " +
                 "  background-color: #1b5e20 !important; " +
-                "} " +
-
-                /* 6. Clean Table Styling */
-                "table { " +
-                "  border-collapse: separate !important; " +
-                "  border-spacing: 0 !important; " +
-                "  width: 100% !important; " +
-                "} " +
-                "th { " +
-                "  background-color: #f5f7fa !important; " +
-                "  color: #4a5568 !important; " +
-                "  font-weight: 600 !important; " +
-                "  text-transform: uppercase !important; " +
-                "  font-size: 11px !important; " +
-                "  letter-spacing: 0.5px !important; " +
-                "  padding: 12px 16px !important; " +
-                "  border-bottom: 2px solid #e2e8f0 !important; " +
-                "} " +
-                "td { " +
-                "  padding: 12px 16px !important; " +
-                "  border-bottom: 1px solid #edf2f7 !important; " +
-                "  color: #2d3748 !important; " +
-                "} " +
-                "tr:hover td { " +
-                "  background-color: #f7fafc !important; " +
-                "} " +
-
-                /* 7. Hide print button, print list, bed management, teleconsult, patient doc, and retro date */
-                ".print-list-wrapper," +
-                "button.dialog-button-group.print," +
-                ".dashboard-header-right-wrapper button.dialog-button-group[accesskey] { display: none !important; } " +
-                ".opd-header-bottom a.back-btn[title*='Bed']," +
-                ".opd-header-bottom a.back-btn .fa-bed," +
-                "a.back-btn:has(.fa-bed) { display: none !important; } " +
-                "a.btn--right.btn--success { display: none !important; } " +
-                ".start-tele-consultation { display: none !important; } " +
-                ".btn-patient-doc { display: none !important; } " +
-                ".retro-date-widget-wrapper, .dashboard-date-picker { display: none !important; } " +
-                ".power-by { display: none !important; } " +
-                ".header-tabs li:nth-child(2), .header-tabs li:nth-child(3), .header-tabs li.new-tab { display: none !important; } " +
-                ".header-scrollable-tabs li:nth-child(2), .header-scrollable-tabs li:nth-child(3) { display: none !important; }";
+                "}";
             document.head.appendChild(style);
         }
 
@@ -297,11 +254,20 @@ Bahmni.Registration.customValidator = {
             var logoImg = document.createElement('img');
             logoImg.src = '/bahmni/images/sjd-logo.svg';
             logoImg.style.height = '32px';
-            logoImg.style.width = '34px';
-            logoImg.style.marginRight = '0px';
+            logoImg.style.marginRight = '12px';
             logoImg.style.verticalAlign = 'middle';
             
+            var textSpan = document.createElement('span');
+            textSpan.innerHTML = 'St John of God Hospital <small style="color: #cbd5e1; font-size: 11px; font-weight: 500; margin-left: 6px;">Sierra Leone</small>';
+            textSpan.style.color = '#ffffff';
+            textSpan.style.fontWeight = '700';
+            textSpan.style.fontSize = '16px';
+            textSpan.style.fontFamily = "'Inter', sans-serif";
+            textSpan.style.verticalAlign = 'middle';
+            textSpan.style.whiteSpace = 'nowrap';
+            
             homeLink.appendChild(logoImg);
+            homeLink.appendChild(textSpan);
             brandDiv.appendChild(homeLink);
             
             header.insertBefore(brandDiv, header.firstChild);
@@ -309,55 +275,4 @@ Bahmni.Registration.customValidator = {
     }
 
     setInterval(runPoller, 1000);
-
-    // Redirect to dashboard on successful visit details save POST request (when "Save" is clicked in visit details page/modal)
-    (function() {
-        var open = XMLHttpRequest.prototype.open;
-        var send = XMLHttpRequest.prototype.send;
-        
-        XMLHttpRequest.prototype.open = function(method, url) {
-            this._method = method;
-            this._url = url;
-            return open.apply(this, arguments);
-        };
-        
-        XMLHttpRequest.prototype.send = function() {
-            var self = this;
-            var onreadystatechange = this.onreadystatechange;
-            this.onreadystatechange = function() {
-                if (self.readyState === 4) {
-                    var urlStr = (self._url || '').toString();
-                    console.log("[SJD Reg] XHR completed:", self._method, urlStr, "Status:", self.status);
-                    
-                    if (self.status >= 200 && self.status < 300) {
-                        var isVisitDetailsSave = false;
-                        if (self._method === 'POST') {
-                            var isEncounterOrObs = (urlStr.indexOf('encounter') !== -1 || 
-                                                   urlStr.indexOf('obs') !== -1);
-                            
-                            console.log("[SJD Reg] POST request to visit/encounter/obs:", isEncounterOrObs, "Hash:", window.location.hash);
-                            
-                            if (isEncounterOrObs) {
-                                // In Registration app, saving any encounter is a visit details save
-                                if (window.location.pathname.indexOf('/bahmni/registration') !== -1) {
-                                    isVisitDetailsSave = true;
-                                }
-                            }
-                        }
-                        console.log("[SJD Reg] isVisitDetailsSave:", isVisitDetailsSave);
-                        if (isVisitDetailsSave) {
-                            setTimeout(function() {
-                                console.log("[SJD Reg] Redirecting to dashboard...");
-                                window.location.href = "/bahmni/home/index.html#/dashboard";
-                            }, 500);
-                        }
-                    }
-                }
-                if (onreadystatechange) {
-                    return onreadystatechange.apply(this, arguments);
-                }
-            };
-            return send.apply(this, arguments);
-        };
-    })();
 })();

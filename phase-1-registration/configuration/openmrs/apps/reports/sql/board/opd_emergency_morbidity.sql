@@ -1,3 +1,22 @@
+-- ============================================================================
+-- REPORT QUERY: OPD & EMERGENCY MORBIDITY SUMMARY
+-- Location: St. John of God Hospital (SJD), Sierra Leone
+--
+-- PURPOSE:
+-- Aggregates patient diagnosis and morbidity counts by visit type (OPD/Emergency),
+-- patient gender, and age group (Under 5, 5-14, 15-49, 50+).
+--
+-- DESIGN RATIONALE:
+-- Focuses exclusively on the 'SJD Morbidity' concept (concept_id = 57517) representing
+-- clinical diagnoses entered in consultations. Allows the hospital board to track 
+-- epidemiological trends and disease load between dates.
+--
+-- FILTERS & JOIN STRATEGY:
+-- - Uses INNER JOINs to ensure only valid, non-voided patient data, encounters,
+--   visits, and visit types are counted.
+-- - Filters by obs_datetime utilizing dynamic date placeholders '#startDate#' and '#endDate#'.
+-- ============================================================================
+
 SELECT 
   v.name AS 'Visit Type',
   o.value_text AS 'Diagnosis / Morbidity',

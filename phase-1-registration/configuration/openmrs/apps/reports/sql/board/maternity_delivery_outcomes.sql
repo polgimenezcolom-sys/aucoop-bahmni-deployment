@@ -1,3 +1,18 @@
+-- ============================================================================
+-- REPORT QUERY: MATERNITY & DELIVERY OUTCOMES SUMMARY
+-- Location: St. John of God Hospital (SJD), Sierra Leone
+--
+-- PURPOSE:
+-- Summarizes delivery statistics, including delivery types, newborn outcomes 
+-- (Alive, Fresh Stillbirth, Macerated Stillbirth), maternal deaths, and maternal morbidities.
+--
+-- DESIGN RATIONALE:
+-- Focuses on 'SJD Delivery Type' (concept_id = 57627) as the primary driving concept,
+-- then LEFT JOINs associated details: Outcome (57626), Maternal Death (57628), and
+-- Maternal Morbidity (57629) from the same maternity encounter. This enables the board
+-- to track key maternal and neonatal survival outcomes.
+-- ============================================================================
+
 SELECT 
   cn_type.name AS 'Delivery Method',
   cn_outcome.name AS 'Delivery Outcome',

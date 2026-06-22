@@ -700,7 +700,7 @@
     }
   },
   "boardOpdEmergencyMorbidity": {
-    "name": "Board - OPD & Emergency Morbidity",
+    "name": "Board - OPD and Emergency Morbidity",
     "type": "MRSGeneric",
     "requiredPrivilege": "app:reports:board",
     "config": {
@@ -708,7 +708,7 @@
     }
   },
   "boardIpdAdmissionsDischarges": {
-    "name": "Board - Inpatient Admissions & Discharges Summary",
+    "name": "Board - Inpatient Admissions and Discharges Summary",
     "type": "MRSGeneric",
     "requiredPrivilege": "app:reports:board",
     "config": {
@@ -716,7 +716,7 @@
     }
   },
   "boardMaternityDeliveryOutcomes": {
-    "name": "Board - Maternity & Delivery Outcomes",
+    "name": "Board - Maternity and Delivery Outcomes",
     "type": "MRSGeneric",
     "requiredPrivilege": "app:reports:board",
     "config": {
@@ -732,7 +732,7 @@
     }
   },
   "boardMortalityCauseOfDeath": {
-    "name": "Board - Mortality & Cause of Death",
+    "name": "Board - Mortality and Cause of Death",
     "type": "MRSGeneric",
     "requiredPrivilege": "app:reports:board",
     "config": {
@@ -740,7 +740,7 @@
     }
   },
   "boardNeonatalPerformance": {
-    "name": "Board - Neonatal Performance & Outcomes",
+    "name": "Board - Neonatal Performance and Outcomes",
     "type": "MRSGeneric",
     "requiredPrivilege": "app:reports:board",
     "config": {
