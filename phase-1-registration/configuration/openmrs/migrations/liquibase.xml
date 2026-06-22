@@ -89,4 +89,7 @@
     <include file ="addMoreObsSplitterProperty.xml"/>
     <include file ="addMultiSelectObsSplitterProperty.xml"/>
     <include file ="addLabRoleWithPrivilege.xml"/>
+    <changeSet id="initialize-board-role-sjd" author="Pol">
+        <sqlFile path="initialize_board_role.sql" endDelimiter=";"/>
+    </changeSet>
 </databaseChangeLog>
