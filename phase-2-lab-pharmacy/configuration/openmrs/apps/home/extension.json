@@ -34,7 +34,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "label": "Laboratory (OpenELIS)",
-    "url": "/openelis/Login",
+    "url": "/openelis/LoginPage.do",
     "icon": "fa-flask",
     "order": 4,
     "requiredPrivilege": "app:clinical"
