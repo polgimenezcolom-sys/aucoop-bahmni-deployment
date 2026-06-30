@@ -28,5 +28,25 @@
     "icon": "fa-file-text-o",
     "order": 3,
     "requiredPrivilege": "app:reports:board"
+  },
+  "laboratory": {
+    "id": "bahmni.laboratory",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "label": "Laboratory (OpenELIS)",
+    "url": "/openelis/LoginPage",
+    "icon": "fa-flask",
+    "order": 4,
+    "requiredPrivilege": "app:clinical"
+  },
+  "pharmacy": {
+    "id": "bahmni.pharmacy",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "label": "Pharmacy (OpenBoxes)",
+    "url": "http://localhost:8085/openboxes",
+    "icon": "fa-medkit",
+    "order": 5,
+    "requiredPrivilege": "app:clinical"
   }
 }
