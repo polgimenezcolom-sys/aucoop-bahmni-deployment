@@ -37,7 +37,7 @@
     "url": "/openelis/LoginPage.do",
     "icon": "fa-flask",
     "order": 4,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:laboratory"
   },
   "pharmacy": {
     "id": "bahmni.pharmacy",
@@ -47,6 +47,6 @@
     "url": "http://localhost:8082/openboxes",
     "icon": "fa-medkit",
     "order": 5,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:pharmacy"
   }
 }
