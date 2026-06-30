@@ -1,0 +1,750 @@
+{
+    "visitReport10": {
+        "name": "Visit Report",
+        "type": "visits",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "forDataAnalysis": true,
+            "patientAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation",
+                "primaryContact"
+            ],
+            "visitAttributes": [
+                "Visit Status",
+                "Admission Status"
+            ],
+            "patientAddresses": [
+                "address3",
+                "city_village"
+            ],
+            "applyDateRangeFor": "visitStopDate",
+            "visitTypesToFilter": [
+                "PHARMACY VISIT",
+                "OPD"
+            ]
+        }
+    },
+    "testReport": {
+        "name": "Test Observation Report",
+        "type": "observations",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "patientAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation",
+                "primaryContact"
+            ],
+            "patientAddresses": [
+                "address3",
+                "city_village"
+            ],
+            "visitAttributes": [
+                "Visit Status",
+                "Admission Status"
+            ],
+            "showVisitInfo": true,
+            "showProvider": true,
+            "conceptNamesToFilter": [
+            ],
+            "conceptNameDisplayFormat": "shortNamePreferred",
+            "conceptValuesToFilter": ["0..20","100..","True"],
+            "conceptClassesToFilter": [],
+            "locationTagsToFilter": [],
+            "programsToFilter": [],
+            "applyDateRangeFor": "obsDate",
+            "encounterPerRow": true,
+            "forDataAnalysis": true,
+            "visitTypesToFilter": [
+                "PHARMACY VISIT",
+                "OPD"
+            ]
+        }
+    },
+    "testFormReport":{
+    "name": "Test Forms Report",
+    "type": "forms",
+    "requiredPrivilege": "app:reports:standard",
+     "config": {
+     "patientAttributes": [
+            "caste",
+            "class",
+            "education",
+            "occupation",
+            "primaryContact"
+        ],
+     "patientAddresses": [
+            "address3",
+            "city_village"
+        ],
+     "visitAttributes": [
+            "Visit Status",
+            "Admission Status"
+        ],    
+     "showVisitInfo": true,
+     "showProvider": true,
+     "formNamesToFilter": ["Vitals"],
+     "conceptNameDisplayFormat": "shortNamePreferred",
+     "locationTagsToFilter": [],
+     "programsToFilter": [],
+     "applyDateRangeFor": "obsDate",
+     "visitTypesToFilter": []
+     }
+    },
+    "formBuilderReport":{
+        "name": "Form builder form Report",
+        "type": "formBuilder",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "patientAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation"
+            ],
+            "patientAddresses": [
+                "address3",
+                "city_village"
+            ],
+            "visitAttributes": [
+                "Visit Status"
+            ],
+            "showVisitInfo": true,
+            "showProvider": true,
+            "formNamesToFilter": ["Vitals_Form2"],
+            "conceptNameDisplayFormat": "shortNamePreferred",
+            "locationTagsToFilter": [],
+            "programsToFilter": [],
+            "applyDateRangeFor": "obsDate",
+            "visitTypesToFilter": []
+        }
+    },
+    "chiefComplaintReport": {
+        "name": "Chief Complaint Report",
+        "type": "obsCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "ageGroupName": "All Ages",
+            "conceptNames": [
+                "Chief Complaint"
+            ],
+            "countOnlyClosedVisits": "false",
+            "visitTypes": [
+                "IPD",
+                "OPD"
+            ]
+        }
+    },
+    "inpatientMorbidity": {
+        "name": "Inpatient Morbidity",
+        "type": "diagnosisCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "visitTypes": [
+                "IPD"
+            ]
+        }
+    },
+    "outpatientMorbidity": {
+        "name": "Outpatient Morbidity",
+        "type": "diagnosisCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "visitTypes": [
+                "OPD"
+            ]
+        }
+    },
+    "laboratoryServices": {
+        "name": "Laboratory Services",
+        "type": "TestCount",
+        "requiredPrivilege": "app:reports:standard"
+    },
+    "genericLaboratoryServices": {
+        "name": "Generic Laboratory Services",
+        "type": "ElisGeneric",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
+        }
+    },
+    "bloodPressure": {
+        "name": "Blood Pressure",
+        "type": "obsCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "ageGroupName": "All Ages",
+            "conceptNames": [
+                "Systolic",
+                "Diastolic"
+            ],
+            "countOnlyClosedVisits": "false",
+            "countOncePerPatient": "false",
+            "visitTypes": [
+                "OPD",
+                "IPD"
+            ]
+        }
+    },
+    "smokingHistoryReport": {
+        "name": "Smoking History Report",
+        "type": "obsCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "ageGroupName": "All Ages",
+            "conceptNames": [
+                "Smoking History"
+            ],
+            "countOnlyClosedVisits": "false",
+            "countOncePerPatient": "true"
+        }
+    },
+    "vitalsTemplateReport": {
+        "name": "Vitals Template Report",
+        "type": "obsTemplate",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "templateName": "Vitals",
+            "patientAttributes": [
+                "caste",
+                "education"
+            ],
+            "applyDateRangeFor": "encounterCreateDate"
+        }
+    },
+    "tuberculosisIntakeTemplateReport": {
+        "name": "Tuberculosis Intake Template Report",
+        "type": "obsTemplate",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "templateName": "Tuberculosis Intake Template"
+        }
+    },
+    "diabetes": {
+        "name": "Diabetes",
+        "type": "obsCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "ageGroupName": "All Ages",
+            "conceptNames": [
+                "Diabetes, Intake"
+            ],
+            "visitTypes": [
+                "OPD",
+                "IPD"
+            ],
+            "countOnlyClosedVisits": "false",
+            "countOncePerPatient": "false"
+        }
+    },
+    "codedValueRangeBasedReport": {
+        "name": "Coded Value Range Based Report",
+        "type": "obsCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "ageGroupName": "All Ages",
+            "conceptNames": [
+                "Diabetes, Cormorbidities"
+            ],
+            "countOncePerPatient": "true"
+        }
+    },
+    "OPD/IPDVisitCount": {
+        "name": "OPD/IPD Visit Count",
+        "type": "IpdOpdVisitCount",
+        "requiredPrivilege": "app:reports:standard"
+    },
+    "haemoglobinRangeBasedReport": {
+        "name": "Haemoglobin Range Based Report",
+        "type": "NumericConceptValuesCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "rangeGroupName": "Haemoglobin",
+            "ageGroupName": "Haemoglobin",
+            "conceptNames": [
+                "Haemoglobin"
+            ],
+            "countOncePerPatient": "false"
+        }
+    },
+    "radiology(X-Ray)Count": {
+        "name": "Radiology(X-Ray) Count",
+        "type": "ObsCountByConceptClass",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "conceptClassNames": [
+                "Radiology"
+            ]
+        }
+    },
+    "obsValuesCountsForAlbuminMCHOperationDateAndPosture(bloodPressure)": {
+        "name": "Obs Values Counts for Albumin, MCH, Operation Date and Posture(blood pressure)",
+        "type": "ObsValueCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "conceptNames": [
+                "Albumin",
+                "MCH",
+                "Date of Operation",
+                "Posture"
+            ]
+        }
+    },
+    "tuberculosisTreatmentCompletionDates": {
+        "name": "Tuberculosis Treatment Completion dates",
+        "type": "DateConceptValuesPatientsList",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "conceptNames": [
+                "Tuberculosis, Treatment Completion Date"
+            ],
+            "templateName": "Tuberculosis Outcome Template"
+        }
+    },
+    "patientsListWithAlbuminMCHAndHIVELISA(Blood)TestsResults": {
+        "name": "Patients list with Albumin, MCH and HIV ELISA (Blood) tests results",
+        "type": "PatientsWithLabtestResults",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "conceptNames": [
+                "HIV ELISA (Blood)",
+                "Albumin",
+                "MCH"
+            ],
+            "testOutcome": [
+                "abnormal",
+                "normal"
+            ]
+        }
+    },
+    "IPDPatientsReport": {
+        "name": "IPD Patients Report",
+        "type": "ipdPatients",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "addressAttributes": [
+                "address1",
+                "city_village"
+            ],
+            "patientAttributes": [
+                "caste",
+                "education"
+            ],
+            "conceptNames": [
+                "Height",
+                "Weight"
+            ],
+            "filterBy": "Date of Discharge"
+        }
+    },
+    "nutritionProgramNutritionalStatusOfRegisteredChildren": {
+        "name": "Nutrition Program - Nutritional status of registered children",
+        "type": "obsCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "ageGroupName": "All Ages",
+            "conceptNames": [
+                "Nutrition, Nutritional Status"
+            ],
+            "countOncePerPatient": "true",
+            "countOnlyClosedVisits": "false"
+        }
+    },
+    "patientsProgramStateCountReport": {
+        "name": "Patients Program State Count Report",
+        "type": "programStateCount",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "programName": "Malaria Program"
+        }
+    },
+    "programPatientStateReport": {
+        "name": "Program Patient State Report",
+        "type": "PatientProgramReport",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "programName": "Malaria Program"
+        }
+    },
+    "programStateTransitionReport": {
+        "name": "Program State Transition Report",
+        "type": "programStateTransitionReport",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "programName": "Malaria Program"
+        }
+    },
+    "OrderFulfillmentReport": {
+        "name": "Order Fulfillment Report",
+        "type": "OrderFulfillmentReport",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "type": "OrderFulfillmentReport",
+            "orderTypes": [
+                "Order",
+                "Drug Order"
+            ]
+        }
+    },
+    "visitReport": {
+        "name": "Visit Report",
+        "type": "visitReport",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "personAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation",
+                "primaryContact"
+            ],
+            "visitAttributes": [
+                "Visit Status"
+            ]
+        }
+    },
+    "patientReport": {
+        "name": "Patient Information",
+        "type": "PatientReport",
+        "requiredPrivilege": "app:reports:standard"
+    },
+    "obsCannedReport": {
+        "name": "Obs Canned Report",
+        "type": "obsCannedReport",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "patientAttributes": [
+                "caste",
+                "education"
+            ],
+            "applyDateRangeFor": "ObsRecording",
+            "addressAttributes": [
+                "postal_code",
+                "city_village"
+            ],
+            "conceptNames": [
+                "Pulse",
+                "WEIGHT",
+                "Vitals",
+                "Systolic",
+                "Temperature"
+            ],
+            "visitIndependentConcept": [
+                "HEIGHT",
+                "Temperature"
+            ],
+            "enrolledProgram": "HIV Program",
+            "showObsOnlyForProgramDuration": false
+        }
+    },
+    "drugOrderReport": {
+        "name": "Drug Order report",
+        "type": "DrugOrder",
+        "requiredPrivilege": "app:reports:standard"
+    },
+    "SampleGenericProgramReport": {
+        "name": "Generic program sample report",
+        "type": "programs",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "patientAttributes": [
+                "education",
+                "primaryContact",
+                "secondaryContact",
+                "class",
+                "cluster"
+            ],
+            "patientAddresses": [
+                "city_village",
+                "address3"
+            ],
+            "programAttributes": [],
+            "forDataAnalysis": true,
+            "showAllStates": true,
+            "programNamesToFilter": [
+                "HIV Program"
+            ]
+        }
+    },
+    "pivotReport": {
+        "name": "Blood Pressure",
+        "type": "aggregation",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "report":{
+                "type": "observations",
+                "config": {
+                    "conceptNamesToFilter":["Diastolic Data", "Systolic Data"],
+                    "showVisitInfo" : true,
+                    "forDataAnalysis": true,
+                    "visitAttributes": ["Visit Status", "Admission Status"],
+                    "visitTypesToFilter": ["IPD"]
+
+                }
+            },
+            "rowGroups": [
+                "Gender"
+            ],
+            "columnGroups": [
+                "Concept Name", "value"
+            ],
+            "distinctGroups": [
+                "Patient Identifier"
+            ]
+        }
+    },
+    "pivotReportOfVisits": {
+        "name": "Aggregation report for visits",
+        "type": "aggregation",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "report":{
+                "type": "visits",
+                "config": {
+                    "forDataAnalysis": true,
+                    "patientAttributes": [
+                        "caste",
+                        "class",
+                        "education",
+                        "occupation",
+                        "primaryContact"
+                    ],
+                    "visitAttributes": [
+                        "Visit Status",
+                        "Admission Status"
+                    ],
+                    "patientAddresses": [
+                        "address3",
+                        "city_village"
+                    ],
+                    "applyDateRangeFor": "visitStopDate",
+                    "visitTypesToFilter": [
+                        "PHARMACY VISIT",
+                        "OPD"
+                    ]
+                }
+            },
+            "rowGroups": [
+                "Gender"
+            ],
+            "columnGroups": [
+                "Visit Status"
+            ],
+            "distinctGroups": [
+                "Patient Identifier"
+            ]
+        }
+    },
+    "pivotReportForPrograms": {
+        "name": "HIV Program Pivot Report",
+        "type": "aggregation",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "report": {
+                "type": "programs",
+                "config": {
+                    "patientAttributes": [
+                    ],
+                    "patientAddresses": [
+                        "city_village",
+                        "address3"
+                    ],
+                    "programAttributes": [],
+                    "forDataAnalysis": true,
+                    "showAllStates": true,
+                    "programNamesToFilter": [
+                        "TB Program",
+                        "HIV Program"
+                    ]
+                }
+            },
+            "columnGroups": [
+                "Program name"
+            ],
+            "rowGroups": [
+                "Gender"
+            ],
+            "distinctGroups": [
+                "Patient Identifier"
+            ],
+            "showTotalRow":true,
+            "showTotalColumn":true
+
+        }
+    },
+    "concatenatedReport": {
+        "name": "ConcatenatedReport",
+        "type": "concatenated",
+        "requiredPrivilege": "app:reports:standard",
+        "config": {
+            "reports": [
+                {
+                    "name": "Visit Report",
+                    "type": "visits",
+                    "config": {
+                        "forDataAnalysis": true,
+                        "patientAttributes": [
+                            "caste",
+                            "class",
+                            "education",
+                            "occupation",
+                            "primaryContact"
+                        ],
+                        "visitAttributes": [
+                            "Visit Status",
+                            "Admission Status"
+                        ],
+                        "patientAddresses": [
+                            "address3",
+                            "city_village"
+                        ],
+                        "applyDateRangeFor": "visitStopDate",
+                        "visitTypesToFilter": [
+                            "PHARMACY VISIT",
+                            "OPD"
+                        ]
+                    }
+                },
+                {
+                    "name": "Obs Canned Report",
+                    "type": "obsCannedReport",
+                    "config": {
+                        "patientAttributes": [
+                            "caste",
+                            "education"
+                        ],
+                        "applyDateRangeFor": "ObsRecording",
+                        "addressAttributes": [
+                            "postal_code",
+                            "city_village"
+                        ],
+                        "conceptNames": [
+                            "Pulse",
+                            "WEIGHT",
+                            "Vitals",
+                            "Systolic",
+                            "Temperature"
+                        ],
+                        "visitIndependentConcept": [
+                            "HEIGHT",
+                            "Temperature"
+                        ],
+                        "enrolledProgram": "HIV Program",
+                        "showObsOnlyForProgramDuration": false
+                    }
+                }
+            ]
+        }
+    },
+  "GenericLabOrderReport": {
+    "name": "Lab Order Results",
+    "type": "labOrders",
+    "requiredPrivilege": "app:reports:standard",	
+    "config": {
+      "patientAttributes": [
+        "caste",
+        "class",
+        "education",
+        "occupation",
+        "primaryContact"
+      ],
+      "patientAddresses": [
+        "address3",
+        "city_village"
+      ],
+      "visitAttributes": [
+        "Visit Status"
+      ],
+      "showVisitInfo": true,
+      "showProvider": true,
+      "programsToFilter": [],
+      "showReferredOutTests": true,
+      "conceptNamesToFilter": [
+        "Haemoglobin (Blood)"
+      ],
+      "conceptValuesToFilter": [
+        "10..100"
+      ],
+      "forDataAnalysis": true,
+      "excludeColumns": [
+        "address3"
+      ],
+      "showOrderDateTime": true
+    }
+  },
+  "GenericLabOrderReportAggregation": {
+    "name": "Test Name vs Gender",
+    "type": "aggregation",
+    "requiredPrivilege": "app:reports:standard",
+    "config": {
+      "report": {
+        "type": "labOrders",
+        "config": {
+          "forDataAnalysis": true,
+          "showVisitInfo": true
+        }
+      },
+      "rowGroups": [
+        "Test Name"
+      ],
+      "columnGroups": [
+        "Gender"
+      ],
+      "distinctGroups": [
+        "Patient Identifier"
+      ]
+    }
+  },
+  "boardOpdEmergencyMorbidity": {
+    "name": "Board - OPD and Emergency Morbidity",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/opd_emergency_morbidity.sql"
+    }
+  },
+  "boardIpdAdmissionsDischarges": {
+    "name": "Board - Inpatient Admissions and Discharges Summary",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/ipd_admissions_discharges.sql"
+    }
+  },
+  "boardMaternityDeliveryOutcomes": {
+    "name": "Board - Maternity and Delivery Outcomes",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/maternity_delivery_outcomes.sql"
+    }
+  },
+  "boardTheatreActivitySummary": {
+    "name": "Board - Theatre Activity Summary",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/theatre_activity_summary.sql"
+    }
+  },
+  "boardMortalityCauseOfDeath": {
+    "name": "Board - Mortality and Cause of Death",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/mortality_cause_of_death.sql"
+    }
+  },
+  "boardNeonatalPerformance": {
+    "name": "Board - Neonatal Performance and Outcomes",
+    "type": "MRSGeneric",
+    "requiredPrivilege": "app:reports:board",
+    "config": {
+      "sqlPath": "/etc/bahmni_config/openmrs/apps/reports/sql/board/neonatal_performance.sql"
+    }
+  }
+}

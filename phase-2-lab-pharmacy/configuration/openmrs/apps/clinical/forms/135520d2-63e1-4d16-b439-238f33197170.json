@@ -1,0 +1,258 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Death Note Unit",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Paediatrics",
+              "display": "Paediatrics"
+            },
+            "uuid": "f80be31b-ce1b-45a7-b8b8-4fa927d93797"
+          },
+          {
+            "name": {
+              "name": "General Ward",
+              "display": "General Ward"
+            },
+            "uuid": "e339064b-9c39-4014-9471-1c6150da49a7"
+          },
+          {
+            "name": {
+              "name": "Maternity",
+              "display": "Maternity"
+            },
+            "uuid": "3493465d-dd34-406d-918c-f2583551b8f7"
+          },
+          {
+            "name": {
+              "name": "Emergency",
+              "display": "Emergency"
+            },
+            "uuid": "e401a423-38cc-4a57-96ab-2a80204db3b8"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "685ac2e0-5478-4c90-8a3c-75824379edde"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "DEATH_NOTE_UNIT_1",
+        "type": "label",
+        "id": "1",
+        "value": "Death Note Unit"
+      }
+    },
+    {
+      "id": "2",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Bed State Admissions",
+        "datatype": "Numeric",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "c66377a3-f9e3-4005-ad48-b954f7d9b587"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 1
+        }
+      },
+      "label": {
+        "translationKey": "BED_STATE_ADMISSIONS_2",
+        "type": "label",
+        "id": "2",
+        "value": "Bed State Admissions"
+      }
+    },
+    {
+      "id": "3",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Bed State Discharges",
+        "datatype": "Numeric",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "e9e4184e-4c93-4840-8632-61b7cd56fea3"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 2
+        }
+      },
+      "label": {
+        "translationKey": "BED_STATE_DISCHARGES_3",
+        "type": "label",
+        "id": "3",
+        "value": "Bed State Discharges"
+      }
+    },
+    {
+      "id": "4",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Bed State Deaths",
+        "datatype": "Numeric",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "8e1bfd4c-ce11-4a1a-a693-6970c423ed02"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 3
+        }
+      },
+      "label": {
+        "translationKey": "BED_STATE_DEATHS_4",
+        "type": "label",
+        "id": "4",
+        "value": "Bed State Deaths"
+      }
+    },
+    {
+      "id": "5",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Bed State Transfer In",
+        "datatype": "Numeric",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "ee0464af-79ce-4a2e-92ac-940a5bdfa8c0"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 4
+        }
+      },
+      "label": {
+        "translationKey": "BED_STATE_TRANSFER_IN_5",
+        "type": "label",
+        "id": "5",
+        "value": "Bed State Transfer In"
+      }
+    },
+    {
+      "id": "6",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Bed State Transfer Out",
+        "datatype": "Numeric",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "34f9b2ec-a5f3-4aa1-9d27-d07ca498fa3c"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 5
+        }
+      },
+      "label": {
+        "translationKey": "BED_STATE_TRANSFER_OUT_6",
+        "type": "label",
+        "id": "6",
+        "value": "Bed State Transfer Out"
+      }
+    },
+    {
+      "id": "7",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Bed State Ward State",
+        "datatype": "Numeric",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "dd028e89-f76f-4cd7-b7c6-78ebd6dcde9d"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 6
+        }
+      },
+      "label": {
+        "translationKey": "BED_STATE_WARD_STATE_7",
+        "type": "label",
+        "id": "7",
+        "value": "Bed State Ward State"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "135520d2-63e1-4d16-b439-238f33197170",
+  "name": "Totals Bed State"
+}

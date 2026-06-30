@@ -1,0 +1,104 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Dressing Department",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "In-Patient Department",
+              "display": "In-Patient Department"
+            },
+            "uuid": "56bdf77e-8568-41d0-9bd8-ca9d681f0ab3"
+          },
+          {
+            "name": {
+              "name": "Out-Patient Department",
+              "display": "Out-Patient Department"
+            },
+            "uuid": "4311bf60-9474-4b5a-afac-2f18080b8995"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "72e4ed0d-bcb1-4f69-862a-4552abe9071e"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "DRESSING_DEPARTMENT_1",
+        "type": "label",
+        "id": "1",
+        "value": "Dressing Department"
+      }
+    },
+    {
+      "id": "2",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Dressing State",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Clean",
+              "display": "Clean"
+            },
+            "uuid": "e0f6ad3c-0d16-4f30-9af1-1e0ef274b258"
+          },
+          {
+            "name": {
+              "name": "Infected",
+              "display": "Infected"
+            },
+            "uuid": "7d1e31d2-8c9a-4d26-9694-8fdb59c12a1e"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "922b726c-1fc6-4cb4-8a38-1834a05c80ad"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 1
+        }
+      },
+      "label": {
+        "translationKey": "DRESSING_STATE_2",
+        "type": "label",
+        "id": "2",
+        "value": "Dressing State"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "371b04dc-f573-4942-8108-795a00745f40",
+  "name": "Dressing"
+}

@@ -1,0 +1,55 @@
+{
+    "id": "bahmni.clinical",
+    "extensionPoints": [
+        {
+            "id": "org.bahmni.clinical.consultation.board",
+            "description": "Bahmni Clinical Consultation Page"
+        },
+        {
+            "id": "org.bahmni.clinical.conceptSetGroup.*",
+            "description": "Define conceptsets part of a conceptset group"
+        },
+        {
+            "id": "org.bahmni.clinical.orders",
+            "description": "Bahmni Orders Page"
+        },
+        {
+            "id": "org.bahmni.patient.search",
+            "description": "Bahmni Patient search, lookups Page"
+        }
+    ],
+    "contextModel": [
+        "patientUuid",
+        "visitUuid"
+    ],
+    "config": {
+        "hideConditions": false,
+        "allowConsultationWhenNoOpenVisit": false,
+        "defaultVisitType": "OPD",
+        "maxConceptSetLevels": 3,
+        "allowOnlyCodedDiagnosis": false,
+        "obsIgnoreList": [
+            "REGISTRATION FEES",
+            "COMMENTS",
+            "Patient file"
+        ],
+        "conceptSetUI": {
+            "Chief Complaint": {
+                "allowAddMore": true
+            },
+            "Return visit date": {
+                "allowFutureDates": true
+            }
+        },
+        "visitPage": {
+            "observationDisplay": {
+                "conceptNames": []
+            }
+        },
+        "patientSearch": {
+            "debounceSearch": false,
+            "fetchDelay": 2000,
+            "serializeSearch": false
+        }
+    }
+}

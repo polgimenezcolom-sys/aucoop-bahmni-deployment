@@ -1,0 +1,681 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "referenceVersion": "1",
+  "controls": [
+    {
+      "id": "1",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Folder Number",
+        "datatype": "Text",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "73594ee2-a507-4059-80cd-6ec5aae53e10"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": false,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        }
+      },
+      "label": {
+        "translationKey": "FOLDER_NUMBER_1",
+        "type": "label",
+        "id": "1",
+        "value": "Folder Number"
+      }
+    },
+    {
+      "id": "2",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Term",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Term",
+              "display": "Term"
+            },
+            "uuid": "bb7c9dd6-5b3c-4097-b067-874708da6871"
+          },
+          {
+            "name": {
+              "name": "Preterm",
+              "display": "Preterm"
+            },
+            "uuid": "52308228-781e-4feb-bc91-ad38293df0ef"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "299c1705-0944-4914-bf09-8298f61df6a7"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 1
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_TERM_2",
+        "type": "label",
+        "id": "2",
+        "value": "Neonatal Term"
+      }
+    },
+    {
+      "id": "3",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Admission Weight",
+        "datatype": "Numeric",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "4d4dfd6c-28be-455c-99f6-0ca6f2981756"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 2
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_ADMISSION_WEIGHT_3",
+        "type": "label",
+        "id": "3",
+        "value": "Neonatal Admission Weight"
+      }
+    },
+    {
+      "id": "4",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Diagnosis",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Prematurity",
+              "display": "Prematurity"
+            },
+            "uuid": "11b840fa-5d60-42db-bff3-418478bea5af"
+          },
+          {
+            "name": {
+              "name": "Infection/Sepsis/Focal infections",
+              "display": "Infection/Sepsis/Focal infections"
+            },
+            "uuid": "3107054b-6b90-49e6-82d2-e993a5e04fc2"
+          },
+          {
+            "name": {
+              "name": "Convulsion",
+              "display": "Convulsion"
+            },
+            "uuid": "9411b5b1-6acf-4280-a22b-ca60e9294511"
+          },
+          {
+            "name": {
+              "name": "Respiratory Distress",
+              "display": "Respiratory Distress"
+            },
+            "uuid": "127639AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Congenital infections (VIH herpes syphilis)",
+              "display": "Congenital infections (VIH herpes syphilis)"
+            },
+            "uuid": "4115fe2b-52cd-4e04-ac6f-d760ecd0411a"
+          },
+          {
+            "name": {
+              "name": "Jaundice",
+              "display": "Jaundice"
+            },
+            "uuid": "136443AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Feeding problems",
+              "display": "Feeding problems"
+            },
+            "uuid": "64d0ef7d-54bf-428b-97a3-a65514168f14"
+          },
+          {
+            "name": {
+              "name": "Neurological problems",
+              "display": "Neurological problems"
+            },
+            "uuid": "fafefeca-34a7-47a6-85d9-1f260d0cb984"
+          },
+          {
+            "name": {
+              "name": "Orphan",
+              "display": "Orphan"
+            },
+            "uuid": "1174AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Weight loss",
+              "display": "Weight loss"
+            },
+            "uuid": "832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Dehydration",
+              "display": "Dehydration"
+            },
+            "uuid": "142630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Hypoglycemia",
+              "display": "Hypoglycemia"
+            },
+            "uuid": "c2e9b10a-eb98-4cb3-81e6-baba9b896c4f"
+          },
+          {
+            "name": {
+              "name": "Malformation",
+              "display": "Malformation"
+            },
+            "uuid": "06710113-82d3-4c92-808e-0ad5f5749214"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "42baef99-ccdc-4683-a7ae-0746ead45c7d"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 3
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_DIAGNOSIS_4",
+        "type": "label",
+        "id": "4",
+        "value": "Neonatal Diagnosis"
+      }
+    },
+    {
+      "id": "5",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Specify Diagnosis",
+        "datatype": "Text",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "e7c861ed-ee1e-440c-ac23-83d8b0d8a925"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": false,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 4
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_SPECIFY_DIAGNOSIS_5",
+        "type": "label",
+        "id": "5",
+        "value": "Neonatal Specify Diagnosis"
+      }
+    },
+    {
+      "id": "6",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal IV Antibiotics",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "No",
+              "display": "No"
+            },
+            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Ampicillin + Gentamicin",
+              "display": "Ampicillin + Gentamicin"
+            },
+            "uuid": "59f1283f-e401-48ef-8bcf-bccb93e1ab70"
+          },
+          {
+            "name": {
+              "name": "Ampicilline + cefotaxime",
+              "display": "Ampicilline + cefotaxime"
+            },
+            "uuid": "fe0afb5e-0039-4a45-bcc3-6c6e1c6daa97"
+          },
+          {
+            "name": {
+              "name": "Ampicillin + cloxaciline",
+              "display": "Ampicillin + cloxaciline"
+            },
+            "uuid": "d3187f4e-c68a-4ed0-b9b2-b06f6641d79a"
+          },
+          {
+            "name": {
+              "name": "Acyclovir",
+              "display": "Acyclovir"
+            },
+            "uuid": "70245AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "ANTI-RETROVIRALS",
+              "display": "ANTI-RETROVIRALS"
+            },
+            "uuid": "1b5b59cc-fe35-4a57-b691-38ba1c15be8f"
+          },
+          {
+            "name": {
+              "name": "Others",
+              "display": "Others"
+            },
+            "uuid": "a363b4e4-f899-4288-8836-c27d66215835"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "9e07c7bc-e77c-4c4d-ad4d-adc173755c30"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 5
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_IV_ANTIBIOTICS_6",
+        "type": "label",
+        "id": "6",
+        "value": "Neonatal IV Antibiotics"
+      }
+    },
+    {
+      "id": "7",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Respiratory Support",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "No",
+              "display": "No"
+            },
+            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "Oxygen",
+              "display": "Oxygen"
+            },
+            "uuid": "81341AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "name": {
+              "name": "CPAP",
+              "display": "CPAP"
+            },
+            "uuid": "ccb77a07-5f21-4302-9f53-73d2bda90f6f"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "f260f26c-a1e5-431b-8900-e92f17c10b23"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 6
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_RESPIRATORY_SUPPORT_7",
+        "type": "label",
+        "id": "7",
+        "value": "Neonatal Respiratory Support"
+      }
+    },
+    {
+      "id": "8",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Feeding Type",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "No feeding",
+              "display": "No feeding"
+            },
+            "uuid": "16f61462-277c-4f83-bbcb-ee6cc47147c1"
+          },
+          {
+            "name": {
+              "name": "Mother milk",
+              "display": "Mother milk"
+            },
+            "uuid": "f2ed3303-0cf0-45d0-b8cf-c6115624f89f"
+          },
+          {
+            "name": {
+              "name": "Formula",
+              "display": "Formula"
+            },
+            "uuid": "53471cdc-33a3-467b-8981-187a82800660"
+          },
+          {
+            "name": {
+              "name": "Mix",
+              "display": "Mix"
+            },
+            "uuid": "4e55360f-fce0-45a3-94f2-f9fd8f5a7968"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "40eb744f-19a5-46f4-86bf-b31f6dbe0984"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 7
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_FEEDING_TYPE_8",
+        "type": "label",
+        "id": "8",
+        "value": "Neonatal Feeding Type"
+      }
+    },
+    {
+      "id": "9",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Feeding Method",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Any",
+              "display": "Any"
+            },
+            "uuid": "ec4b5b0d-3cb9-4dcf-8728-9681ca273b8b"
+          },
+          {
+            "name": {
+              "name": "Breastfeeding",
+              "display": "Breastfeeding"
+            },
+            "uuid": "177556f3-15d3-4a1b-963f-0b866f8583d4"
+          },
+          {
+            "name": {
+              "name": "Finger-syringe",
+              "display": "Finger-syringe"
+            },
+            "uuid": "a0731ad5-ad5a-4509-859c-5d7fd8cd0e48"
+          },
+          {
+            "name": {
+              "name": "NST",
+              "display": "NST"
+            },
+            "uuid": "71686251-dced-460f-a69d-27ce8f9212c2"
+          },
+          {
+            "name": {
+              "name": "Bottle",
+              "display": "Bottle"
+            },
+            "uuid": "162353AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "81cee596-72cf-4e7f-9df7-dacc1ab285f2"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 8
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_FEEDING_METHOD_9",
+        "type": "label",
+        "id": "9",
+        "value": "Neonatal Feeding Method"
+      }
+    },
+    {
+      "id": "10",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Discharge Date",
+        "datatype": "Date",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "7bf9f5ff-4c45-43f0-b2b2-4a37b06ef2ae"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": false,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 9
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_DISCHARGE_DATE_10",
+        "type": "label",
+        "id": "10",
+        "value": "Neonatal Discharge Date"
+      }
+    },
+    {
+      "id": "11",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Result",
+        "datatype": "Coded",
+        "answers": [
+          {
+            "name": {
+              "name": "Death",
+              "display": "Death"
+            },
+            "uuid": "3db61739-38f8-4ebc-963e-ec256270d3c9"
+          },
+          {
+            "name": {
+              "name": "Transfer to other hospital",
+              "display": "Transfer to other hospital"
+            },
+            "uuid": "1075365f-7245-4559-8fb5-27c509557e96"
+          },
+          {
+            "name": {
+              "name": "Discharge home",
+              "display": "Discharge home"
+            },
+            "uuid": "a8f831ab-2b6c-46ec-b8f6-4fa3cfce22be"
+          }
+        ],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "7337db27-dd13-4351-8f33-0f74352622b5"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": true,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 10
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_RESULT_11",
+        "type": "label",
+        "id": "11",
+        "value": "Neonatal Result"
+      }
+    },
+    {
+      "id": "12",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Discharge Weight",
+        "datatype": "Numeric",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "2efd8ced-6e49-4726-8273-6ee9be2d660f"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": false,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 11
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_DISCHARGE_WEIGHT_12",
+        "type": "label",
+        "id": "12",
+        "value": "Neonatal Discharge Weight"
+      }
+    },
+    {
+      "id": "13",
+      "concept": {
+        "conceptClass": "Question",
+        "name": "SJD Neonatal Comments",
+        "datatype": "Text",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "df0473e2-e956-4f02-896c-c39d34661852"
+      },
+      "type": "obsControl",
+      "properties": {
+        "notes": false,
+        "hideLabel": false,
+        "mandatory": false,
+        "addMore": false,
+        "location": {
+          "column": 0,
+          "row": 12
+        }
+      },
+      "label": {
+        "translationKey": "NEONATAL_COMMENTS_13",
+        "type": "label",
+        "id": "13",
+        "value": "Neonatal Comments"
+      }
+    }
+  ],
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "referenceFormUuid": "e079a203-3167-4e3d-87b7-b84f65aeef0a",
+  "name": "Neonatal"
+}
