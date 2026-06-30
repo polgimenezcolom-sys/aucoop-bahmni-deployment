@@ -367,6 +367,7 @@ services:
     volumes:
       - "${CONFIG_VOLUME:?}:/usr/local/apache2/htdocs/bahmni_config/:ro"
       - "${CONFIG_VOLUME:?}/landing-index.html:/usr/local/apache2/htdocs/index.html:ro"
+      - "${CONFIG_VOLUME:?}/home-index.html:/usr/local/apache2/htdocs/bahmni/home/index.html:ro"
     #   - "${BAHMNI_APPS_PATH:?}/ui/app/:/usr/local/apache2/htdocs/bahmni"
     #   - "${BAHMNI_APPS_PATH:?}/ui/node_modules/@bower_components/:/usr/local/apache2/htdocs/bahmni/components"
     logging: *log-config

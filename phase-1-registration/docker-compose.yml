@@ -367,6 +367,7 @@ services:
     volumes:
       - "${CONFIG_VOLUME:?}:/usr/local/apache2/htdocs/bahmni_config/:ro"
       - "${CONFIG_VOLUME:?}/landing-index.html:/usr/local/apache2/htdocs/index.html:ro"
+      - "${CONFIG_VOLUME:?}/home-index.html:/usr/local/apache2/htdocs/bahmni/home/index.html:ro"
     #   - "${BAHMNI_APPS_PATH:?}/ui/app/:/usr/local/apache2/htdocs/bahmni"
     #   - "${BAHMNI_APPS_PATH:?}/ui/node_modules/@bower_components/:/usr/local/apache2/htdocs/bahmni/components"
     logging: *log-config
@@ -649,8 +650,36 @@ services:
       - '../snomed-resources/load-snowstorm-data.sh:/load-snowstorm-data.sh'
     #  - "${SNOWSTORM_RF2_FILE_PATH:?}:/snowstorm-data/snomed-data.zip:ro"
 
+  openboxes-db:
+    profiles: ["openboxes"]
+    image: mysql:5.7.44
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: openboxes
+      MYSQL_USER: openboxes
+      MYSQL_PASSWORD: password
+    volumes:
+      - openboxes-db-data:/var/lib/mysql
+    logging: *log-config
+    restart: ${RESTART_POLICY}
+
+  openboxes:
+    profiles: ["openboxes"]
+    image: openboxes/openboxes:latest
+    ports:
+      - '8085:8080'
+    environment:
+      - OPENBOXES_DB_URL=jdbc:mysql://openboxes-db:3306/openboxes?useSSL=false&characterEncoding=UTF-8
+      - OPENBOXES_DB_USERNAME=openboxes
+      - OPENBOXES_DB_PASSWORD=password
+    depends_on:
+      - openboxes-db
+    logging: *log-config
+    restart: ${RESTART_POLICY}
 
 volumes:
+  openboxes-db-data:
   openelisdbdata:
   odoodbdata:
   odooappdata:
