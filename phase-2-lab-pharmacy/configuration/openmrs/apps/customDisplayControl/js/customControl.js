@@ -242,3 +242,18 @@
     setInterval(injectSJDHeaderBranding, 1000);
     injectSJDHeaderBranding();
 })();
+
+// 6. FORCE LAB & PHARMACY TILES TO OPEN IN A NEW TAB
+(function() {
+    function makeTilesOpenInNewTab() {
+        var tiles = document.querySelectorAll('a[href*="openelis"], a[href*="openboxes"], a[href*="8082"]');
+        tiles.forEach(function(tile) {
+            if (tile.getAttribute('target') !== '_blank') {
+                tile.setAttribute('target', '_blank');
+            }
+        });
+    }
+    // Poll frequently to handle AngularJS dynamic rendering
+    setInterval(makeTilesOpenInNewTab, 500);
+})();
+
