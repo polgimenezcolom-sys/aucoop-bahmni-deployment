@@ -48,7 +48,8 @@
         "  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important; " +
         "} " +
 
-        /* 2. Top Header Branding (SJD Dark Blue) */
+        /* 2. Top Header Branding (SJD Dark Blue) - DISABLED: use default teal theme */
+        /*
         "header, .opd-header, .opd-header-top, .reg-header, .opd-header-bottom, .header { " +
         "  background-color: #0b3583 !important; " +
         "  background-image: none !important; " +
@@ -80,6 +81,7 @@
         ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover, .reg-header button:hover, .reg-header a.back-btn:hover { " +
         "  background: rgba(255, 255, 255, 0.25) !important; " +
         "} " +
+        */ +
 
         /* 3. Dashboard Layout Cards */
         ".dashboard-section, .patient-dashboard .section-container, .section, .visit-page .section-container { " +
@@ -110,29 +112,29 @@
         "} " +
 
         /* 5. Modern Button Theme */
-        "button, .button, input[type='button'], input[type='submit'] { " +
-        "  border-radius: 6px !important; " +
-        "  padding: 8px 16px !important; " +
-        "  font-weight: 500 !important; " +
-        "  transition: all 0.2s ease !important; " +
-        "} " +
         "button.confirm, .button.confirm, input[type='submit'], button.save-btn { " +
         "  background-color: #2e7d32 !important; " +
         "  color: #ffffff !important; " +
         "  border: none !important; " +
+        "  border-radius: 6px !important; " +
         "} " +
         "button.confirm:hover, .button.confirm:hover, button.save-btn:hover { " +
         "  background-color: #1b5e20 !important; " +
         "} " +
-        ".opd-header-bottom button, .opd-header-bottom a.back-btn { " +
-        "  background: #f1f5f9 !important; " +
-        "  border: 1px solid #cbd5e1 !important; " +
+        /* Style registration search button in navy blue with no hover color change (using high specificity) */
+        "body .reg-search button, " +
+        "body .reg-search button:hover, " +
+        "body .reg-search button:active, " +
+        "body .reg-search button:focus, " +
+        "body .reg-srch-btn button, " +
+        "body .reg-srch-btn button:hover, " +
+        "body .reg-srch-btn button:active, " +
+        "body .reg-srch-btn button:focus { " +
+        "  background-color: #0b3583 !important; " +
+        "  color: #ffffff !important; " +
+        "  border: none !important; " +
         "  border-radius: 6px !important; " +
-        "  color: #0b3583 !important; " +
-        "} " +
-        ".opd-header-bottom button:hover, .opd-header-bottom a.back-btn:hover { " +
-        "  background: #e2e8f0 !important; " +
-        "  color: #0b3583 !important; " +
+        "  box-shadow: none !important; " +
         "} " +
 
         /* 6. Clean Table Styling */
@@ -171,7 +173,7 @@
         ".start-tele-consultation { display: none !important; } " +
         ".btn-patient-doc { display: none !important; } " +
         ".retro-date-widget-wrapper, .dashboard-date-picker { display: none !important; } " +
-        ".power-by { display: none !important; } " +
+        ".power-by a { color: #007d8e !important; text-decoration: underline !important; } " +
         ".header-tabs li:nth-child(2), .header-tabs li:nth-child(3), .header-tabs li.new-tab { display: none !important; } " +
         ".header-scrollable-tabs li:nth-child(2), .header-scrollable-tabs li:nth-child(3) { display: none !important; }";
 
@@ -184,8 +186,8 @@
 (function() {
     function replaceFooter() {
         var pwrBy = document.querySelector('.power-by');
-        if (pwrBy && pwrBy.innerHTML.indexOf('St John of God') === -1) {
-            pwrBy.innerHTML = '<span style="color:#888;font-size:12px;">St John of God Hospital &mdash; Lunsar, Sierra Leone</span>';
+        if (pwrBy && pwrBy.innerHTML.indexOf('Designed by AUCOOP') === -1) {
+            pwrBy.innerHTML = '<span style="color:#888;font-size:12px;">St John of God Hospital &mdash; Lunsar, Sierra Leone | </span><a href="https://github.com/polgimenezcolom-sys/aucoop-bahmni-deployment" target="_blank" style="color:#007d8e;text-decoration:underline;font-size:12px;font-weight:600;">Designed by AUCOOP with Bahmni</a>';
             pwrBy.style.display = 'block';
             pwrBy.style.textAlign = 'center';
             pwrBy.style.padding = '10px';
@@ -201,15 +203,15 @@
     var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/svg+xml';
     link.rel = 'shortcut icon';
-    link.href = '/bahmni/images/sjd-logo.svg';
+    link.href = '/bahmni_config/openmrs/apps/home/sjd-logo.svg';
     document.getElementsByTagName('head')[0].appendChild(link);
 })();
 
 // 5. DYNAMIC SJD HEADER BRANDING
 (function() {
     function injectSJDHeaderBranding() {
-        var header = document.querySelector('.opd-header-top') || document.querySelector('.reg-header') || document.querySelector('#consultation-header') || document.querySelector('header');
-        if (header && !document.getElementById('sjd-header-brand')) {
+        var header = document.querySelector('.opd-header-wrapper') || document.querySelector('.opd-header') || document.querySelector('.opd-header-top') || document.querySelector('.reg-header') || document.querySelector('#consultation-header') || document.querySelector('.patient-header') || document.querySelector('header');
+        if (header && !header.querySelector('#sjd-header-brand')) {
             var brandDiv = document.createElement('div');
             brandDiv.id = 'sjd-header-brand';
             brandDiv.style.display = 'inline-flex';
@@ -226,22 +228,11 @@
             homeLink.style.textDecoration = 'none';
             
             var logoImg = document.createElement('img');
-            logoImg.src = '/bahmni/images/sjd-logo.svg';
+            logoImg.src = '/bahmni_config/openmrs/apps/home/sjd-logo.svg';
             logoImg.style.height = '32px';
-            logoImg.style.marginRight = '12px';
             logoImg.style.verticalAlign = 'middle';
             
-            var textSpan = document.createElement('span');
-            textSpan.innerHTML = 'St John of God Hospital <small style="color: #cbd5e1; font-size: 11px; font-weight: 500; margin-left: 6px;">Sierra Leone</small>';
-            textSpan.style.color = '#ffffff';
-            textSpan.style.fontWeight = '700';
-            textSpan.style.fontSize = '16px';
-            textSpan.style.fontFamily = "'Inter', sans-serif";
-            textSpan.style.verticalAlign = 'middle';
-            textSpan.style.whiteSpace = 'nowrap';
-            
             homeLink.appendChild(logoImg);
-            homeLink.appendChild(textSpan);
             brandDiv.appendChild(homeLink);
             
             header.insertBefore(brandDiv, header.firstChild);

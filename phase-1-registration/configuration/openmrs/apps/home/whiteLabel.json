@@ -1,23 +1,23 @@
 {
 	"homePage": {
 		"header_text": "<b>ST. JOHN OF GOD HOSPITAL<br />Lunsar, Sierra Leone</b>",
-		"logo": "/bahmni/images/sjd-logo.svg",
-		"title_text": ""
+		"logo": "/bahmni_config/openmrs/apps/home/sjd-logo.svg",
+		"title_text": " "
 	},
 	"loginPage": {
-		"logo": "/bahmni/images/sjd-logo.svg",
+		"logo": "/bahmni_config/openmrs/apps/home/sjd-logo.svg",
 		"showHeaderText": true,
 		"showTitleText": true
 	},
 	"helpLink": {
-		"url": ""
+		"url": "https://github.com/polgimenezcolom-sys/aucoop-bahmni-deployment"
 	},
 	"landingPage": [
 		{
 			"enabled": true,
 			"name": "clinicalService",
 			"title": "Clinical Service",
-			"logo": "/bahmni/images/sjd-logo.svg",
+			"logo": "/bahmni_config/openmrs/apps/home/sjd-logo.svg",
 			"link": "/bahmni/home"
 		}
 	]

@@ -62,6 +62,13 @@
             "defaultIdentifierPrefix": "SJD",
             "defaultVisitType": "OPD",
             "visitTypes": ["OPD"],
+            "forwardUrlsForVisitTypes": [
+                {
+                    "visitType": "OPD",
+                    "forwardUrl": "../home/index.html#/dashboard",
+                    "translationKey": "Registration Home"
+                }
+            ],
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "showLastName": true,

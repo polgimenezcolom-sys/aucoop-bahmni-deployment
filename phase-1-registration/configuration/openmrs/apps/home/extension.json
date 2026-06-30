@@ -27,6 +27,6 @@
     "url": "../reports/",
     "icon": "fa-file-text-o",
     "order": 3,
-    "requiredPrivilege": "app:reports:access"
+    "requiredPrivilege": "app:reports:board"
   }
 }
