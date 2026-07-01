@@ -37,5 +37,27 @@
             </value>
             <description>SQL query to get the list of emergency medications to be acknowledged</description>
         </globalProperty>
+        <globalProperty>
+            <property>emrapi.sqlSearch.pharmacyQueue</property>
+            <value>
+                SELECT DISTINCT
+                    pi.identifier AS identifier,
+                    concat(pn.given_name, ' ', pn.family_name) AS name,
+                    p.gender AS gender,
+                    p.uuid AS patient_uuid,
+                    p.birthdate AS date_of_birth,
+                    v.uuid AS visit_uuid,
+                    v.date_started AS date_started
+                FROM patient pat
+                JOIN person p ON p.person_id = pat.patient_id AND p.voided = 0
+                JOIN person_name pn ON pn.person_id = pat.patient_id AND pn.voided = 0 AND pn.preferred = 1
+                JOIN patient_identifier pi ON pi.patient_id = pat.patient_id AND pi.voided = 0 AND pi.preferred = 1
+                JOIN visit v ON v.patient_id = pat.patient_id AND v.voided = 0 AND DATE(v.date_started) = CURDATE()
+                JOIN orders o ON o.patient_id = pat.patient_id AND o.voided = 0 AND o.order_type_id = (SELECT order_type_id FROM order_type WHERE name = 'Drug Order') AND DATE(o.date_created) = CURDATE()
+                LEFT JOIN obs ob ON ob.person_id = pat.patient_id AND ob.voided = 0 AND ob.concept_id = (SELECT concept_id FROM concept_name WHERE name = 'Medications Dispensed' AND concept_name_type = 'FULLY_SPECIFIED' LIMIT 1) AND DATE(ob.obs_datetime) = CURDATE()
+                WHERE ob.obs_id IS NULL;
+            </value>
+            <description>SQL query to get the list of patients with prescriptions today who have not been marked dispensed</description>
+        </globalProperty>
     </globalProperties>
 </config>

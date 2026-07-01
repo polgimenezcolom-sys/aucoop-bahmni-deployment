@@ -1,0 +1,41 @@
+{
+  "translationsUrl": "/openmrs/ws/rest/v1/bahmniie/form/translations",
+  "events": {
+    "onFormSave": "",
+    "onFormInit": ""
+  },
+  "name": "Dispensing Confirmation",
+  "controls": [
+    {
+      "label": {
+        "translationKey": "MEDICATIONS_DISPENSED",
+        "value": "Medications Dispensed",
+        "type": "label",
+        "id": "1"
+      },
+      "properties": {
+        "mandatory": true,
+        "hideLabel": false,
+        "location": {
+          "column": 0,
+          "row": 0
+        },
+        "addMore": false,
+        "notes": false
+      },
+      "concept": {
+        "conceptClass": "Question",
+        "name": "Medications Dispensed",
+        "datatype": "Boolean",
+        "answers": [],
+        "properties": {
+          "allowDecimal": null
+        },
+        "conceptHandler": null,
+        "uuid": "02f94601-6c82-4be3-ad56-d6cf1ed85814"
+      },
+      "id": "1",
+      "type": "obsControl"
+    }
+  ]
+}

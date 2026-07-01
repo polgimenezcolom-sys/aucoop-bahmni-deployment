@@ -35,5 +35,17 @@
     "label": "All",
     "order": 2,
     "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalPatientsSearchPharmacy": {
+    "id": "bahmni.clinical.patients.search.pharmacy",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.pharmacyQueue",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "Pharmacy Queue",
+    "order": 3,
+    "requiredPrivilege": "app:pharmacy"
   }
 }
