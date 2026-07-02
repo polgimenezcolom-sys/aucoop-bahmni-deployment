@@ -43,8 +43,8 @@
     "id": "bahmni.pharmacy",
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
-    "label": "Pharmacy (OpenBoxes)",
-    "url": "http://localhost:8082/openboxes",
+    "label": "Pharmacy (Odoo)",
+    "url": "http://localhost:8069",
     "icon": "fa-medkit",
     "order": 5,
     "requiredPrivilege": "app:pharmacy"
